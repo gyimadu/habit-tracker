@@ -3,20 +3,17 @@
 import React, { useState, useEffect } from 'react';
 import HabitCalendar from '@/components/HabitCalendar';
 
-// Define the Habit type
 interface Habit {
   id: string;
   name: string;
 }
 
 export default function Home() {
-  // Use state for habits to avoid hydration issues
   const [habits, setHabits] = useState<Habit[]>([]);
   const [newHabitName, setNewHabitName] = useState('');
   const [isAddingHabit, setIsAddingHabit] = useState(false);
   const [isClient, setIsClient] = useState(false);
 
-  // Load habits from local storage on client side
   useEffect(() => {
     const storedHabits = localStorage.getItem('habits');
     if (storedHabits) {
@@ -25,7 +22,6 @@ export default function Home() {
     setIsClient(true);
   }, []);
 
-  // Update local storage when habits change
   useEffect(() => {
     if (isClient) {
       localStorage.setItem('habits', JSON.stringify(habits));
@@ -36,7 +32,7 @@ export default function Home() {
   const addHabit = () => {
     if (newHabitName.trim()) {
       const newHabit = {
-        id: `habit-${Date.now()}`, // use a more consistent ID generation
+        id: `habit-${Date.now()}`, 
         name: newHabitName.trim()
       };
       setHabits(prevHabits => [...prevHabits, newHabit]);
@@ -51,7 +47,6 @@ export default function Home() {
     localStorage.removeItem(`habit-${id}`);
   };
 
-  // Prevent rendering before client-side hydration
   if (!isClient) {
     return null;
   }

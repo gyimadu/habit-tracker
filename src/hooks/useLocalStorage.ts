@@ -3,10 +3,7 @@ import { useState, useEffect } from 'react';
 export function useLocalStorage<T>(key: string, initialValue: T) {
   const [storedValue, setStoredValue] = useState<T>(() => {
     try {
-      // Disable the unused useEffect warning
-      /* eslint-disable @typescript-eslint/no-unused-vars */
       const unusedEffect = useEffect;
-      /* eslint-enable @typescript-eslint/no-unused-vars */
 
       const item = window.localStorage.getItem(key);
       return item ? JSON.parse(item) : initialValue;

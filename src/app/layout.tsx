@@ -4,9 +4,9 @@ import "./globals.css";
 import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
-    subsets: ["latin", "latin-ext"], // Include subsets you need
-    variable: "--font-poppins", // Define a custom CSS variable
-    weight: ["100", "200", "400", "600", "800"], // Choose weights you want
+    subsets: ["latin", "latin-ext"],
+    variable: "--font-poppins",
+    weight: ["100", "200", "400", "600", "800"], 
 });
 
 
