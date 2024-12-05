@@ -58,7 +58,7 @@ export default function Home() {
 
   return (
     <main className="container mx-auto p-4 max-w-5xl">
-      <h1 className="text-3xl font-bold mb-6 text-center">Habit Tracker</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">Habits</h1>
       
       {/* New Habit Section */}
       <div className="mb-6 text-center">
@@ -69,23 +69,23 @@ export default function Home() {
             onClick={() => setIsAddingHabit(true)}
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
           >
-            + Add Habit
+            + Create Habit
           </button>
         ) : (
-          <div className="flex space-x-2">
+          <div className="flex flex-col items-center space-y-3">
             <input 
               type="text"
               value={newHabitName}
               onChange={(e) => setNewHabitName(e.target.value)}
-              placeholder="Enter habit name"
-              className="flex-grow px-3 py-2 border rounded text-black bg-white"
+              placeholder="Name"
+              className="block w-100 px-3 py-2 border rounded text-white bg-black focus:outline-none"
               onKeyDown={(e) => e.key === 'Enter' && addHabit()}
             />
             <button 
               onClick={addHabit}
-              className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+              className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-blue-600"
             >
-              Save
+              Create!
             </button>
             <button 
               onClick={() => setIsAddingHabit(false)}
