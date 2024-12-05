@@ -57,7 +57,7 @@ export default function Home() {
       
       {/* New Habit Section */}
       <div className="mb-6 text-center">
-        <h2 className="text-2xl font-semibold mb-4">New Habit?</h2>
+        <p className="text-2l mb-4">A simpler way to track your habits everyday</p>
         
         {!isAddingHabit ? (
           <button 
