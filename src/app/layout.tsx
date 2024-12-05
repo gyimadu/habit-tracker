@@ -23,7 +23,7 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "My Habit Tracker",
-  description: "habit-tracker.io",
+  description: "habits.io",
 };
 
 export default function RootLayout({
