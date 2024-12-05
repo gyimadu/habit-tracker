@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import HabitCalendar from '@/components/HabitCalendar';
+import NavBar from '@/components/NavBar'
 
 interface Habit {
   id: string;
@@ -52,17 +53,18 @@ export default function Home() {
   }
 
   return (
-    <main className="container mx-auto p-4 max-w-5xl">
+    <main className="container mx-auto p-5 max-w-5xl">
+      <NavBar />
       <h1 className="text-3xl font-bold mb-6 text-center">Habits</h1>
       
       {/* New Habit Section */}
-      <div className="mb-6 text-center">
+      <div className="mb-10 text-center">
         <p className="text-2l mb-4">A simpler way to track your habits everyday</p>
         
         {!isAddingHabit ? (
           <button 
             onClick={() => setIsAddingHabit(true)}
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition"
           >
             + Create Habit
           </button>
@@ -73,18 +75,18 @@ export default function Home() {
               value={newHabitName}
               onChange={(e) => setNewHabitName(e.target.value)}
               placeholder="Name"
-              className="block w-100 px-3 py-2 border rounded text-white bg-black focus:outline-none"
+              className="block w-100 px-3 py-2 border rounded-lg text-white bg-black focus:outline-none"
               onKeyDown={(e) => e.key === 'Enter' && addHabit()}
             />
             <button 
               onClick={addHabit}
-              className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+              className="bg-gray-500 text-white px-4 py-1.5 rounded-lg hover:bg-blue-800"
             >
               Create!
             </button>
             <button 
               onClick={() => setIsAddingHabit(false)}
-              className="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400"
+              className="bg-gray-300 text-black px-4 py-1.5 rounded-lg hover:bg-gray-400"
             >
               Cancel
             </button>
