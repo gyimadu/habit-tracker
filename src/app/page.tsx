@@ -76,7 +76,7 @@ export default function Home() {
                 + Get Started
               </button>
             ) : (
-              <div className="flex flex-col md:flex-row items-stretch">
+              <div className="flex flex-col md:flex-row md:items-start items-stretch">
                 <input 
                   type="text"
                   value={newHabitName}
@@ -87,13 +87,13 @@ export default function Home() {
                 />
                 <button 
                   onClick={addHabit}
-                  className="bg-gray-500 w-auto mb-1 text-white ml-1 px-4 py-1.5 rounded-lg hover:bg-blue-800"
+                  className="bg-gray-500 w-auto mb-1 text-white ml-1 px-4 py-2 rounded-lg hover:bg-blue-800"
                 >
                   Create!
                 </button>
                 <button 
                   onClick={() => setIsAddingHabit(false)}
-                  className="bg-gray-300 w-auto text-black ml-1 px-4 py-1.5 rounded-lg hover:bg-gray-400"
+                  className="bg-gray-300 w-auto text-black ml-1 px-4 py-2 rounded-lg hover:bg-gray-400"
                 >
                   Cancel
                 </button>
