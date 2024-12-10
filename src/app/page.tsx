@@ -73,7 +73,7 @@ export default function Home() {
                 onClick={() => setIsAddingHabit(true)}
                 className="bg-blue-500 border-blue-500 text-white px-4 py-2.5 rounded-lg hover:bg-blue-800 transition"
               >
-                + Create Habit
+                + Get Started
               </button>
             ) : (
               <div className="flex flex-col md:flex-row items-stretch">
