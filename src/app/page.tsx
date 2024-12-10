@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import HabitCalendar from '@/components/HabitCalendar';
 import NavBar from '@/components/NavBar'
+import Image from 'next/image'
 
 interface Habit {
   id: string;
@@ -57,43 +58,53 @@ export default function Home() {
       <NavBar />
 
       <main className="container mx-auto p-5 max-w-7xl">
-        
-        <div className="flex flex-col items-center justify-center h-screen mb-10 text-center">
-          <h1 className="text-6xl font-bold mb-6 text-center">Build better habits, everyday!</h1>
-
-          <p className="text-2l mb-4">Your go-to tool for building and maintaining great habits.</p>
           
-          {!isAddingHabit ? (
-            <button 
-              onClick={() => setIsAddingHabit(true)}
-              className="bg-blue-500 text-white px-4 py-3 rounded-lg hover:bg-blue-800 transition"
-            >
-              + Create Habit
-            </button>
-          ) : (
-            <div className="flex flex-col items-center space-y-3">
-              <input 
-                type="text"
-                value={newHabitName}
-                onChange={(e) => setNewHabitName(e.target.value)}
-                placeholder="Name"
-                className="block w-100 px-3 py-2 border rounded-lg text-white bg-black focus:outline-none"
-                onKeyDown={(e) => e.key === 'Enter' && addHabit()}
-              />
+        <div className="flex flex-col md:flex-row items-center justify-center h-screen mb-10 text-center">
+          <div className="text-left">
+            <h1 className="text-5xl font-bold mb-6">Build better habits, everyday!</h1>
+            <p className="text-xl mb-4">Your go-to tool for building and maintaining great habits.</p>
+            
+            {!isAddingHabit ? (
               <button 
-                onClick={addHabit}
-                className="bg-gray-500 text-white px-4 py-1.5 rounded-lg hover:bg-blue-800"
+                onClick={() => setIsAddingHabit(true)}
+                className="bg-blue-500 border-blue-500 text-white px-4 py-2.5 rounded-lg hover:bg-blue-800 transition"
               >
-                Create!
+                + Create Habit
               </button>
-              <button 
-                onClick={() => setIsAddingHabit(false)}
-                className="bg-gray-300 text-black px-4 py-1.5 rounded-lg hover:bg-gray-400"
-              >
-                Cancel
-              </button>
-            </div>
-          )}
+            ) : (
+              <div className="flex flex-row items-center">
+                <input 
+                  type="text"
+                  value={newHabitName}
+                  onChange={(e) => setNewHabitName(e.target.value)}
+                  placeholder="Let's name your habit"
+                  className="w-150 px-3 py-2 border rounded-lg text-white bg-black focus:outline-none"
+                  onKeyDown={(e) => e.key === 'Enter' && addHabit()}
+                />
+                <button 
+                  onClick={addHabit}
+                  className="bg-gray-500 text-white ml-4 px-4 py-1.5 rounded-lg hover:bg-blue-800"
+                >
+                  Create!
+                </button>
+                <button 
+                  onClick={() => setIsAddingHabit(false)}
+                  className="bg-gray-300 text-black ml-1 px-4 py-1.5 rounded-lg hover:bg-gray-400"
+                >
+                  Cancel
+                </button>
+              </div>
+            )}
+          </div>
+
+          <div>
+            <Image
+              src="/healthy-habit.png"
+              alt="habits"
+              width={500}
+              height={100}
+            />
+          </div>
         </div>
 
         {/* Habits List */}
