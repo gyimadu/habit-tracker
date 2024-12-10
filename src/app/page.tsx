@@ -82,18 +82,18 @@ export default function Home() {
                   value={newHabitName}
                   onChange={(e) => setNewHabitName(e.target.value)}
                   placeholder="Let's name your habit"
-                  className="w-auto px-3 py-2 mb-2 border rounded-lg text-white bg-black focus:outline-none"
+                  className="w-auto px-3 py-3 mb-2 border rounded-lg text-white bg-black focus:outline-none"
                   onKeyDown={(e) => e.key === 'Enter' && addHabit()}
                 />
                 <button 
                   onClick={addHabit}
-                  className="bg-gray-500 w-auto mb-1 text-white ml-1 px-4 py-2 rounded-lg hover:bg-blue-800"
+                  className="bg-gray-500 w-auto mb-1 text-white ml-1 px-4 py-3 rounded-lg hover:bg-blue-800"
                 >
                   Create!
                 </button>
                 <button 
                   onClick={() => setIsAddingHabit(false)}
-                  className="bg-gray-300 w-auto text-black ml-1 px-4 py-2 rounded-lg hover:bg-gray-400"
+                  className="bg-gray-300 w-auto text-black ml-1 px-4 py-3 rounded-lg hover:bg-gray-400"
                 >
                   Cancel
                 </button>
