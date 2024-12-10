@@ -65,7 +65,7 @@ export default function Home() {
           
         <div className="flex flex-col md:flex-row items-center justify-center h-screen mb-10 text-center">
           <div className="text-left w-full md:w-6/12 mb-10">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-normal md:leading-normal">Simplified progress tracking, for you!</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mt-25 md:mt-0 mb-6 md:leading-normal">Simplified progress tracking, for you!</h1>
             <p className="text-lg md:text-xl mb-4">Track. Achieve. Repeat</p>
             
             {!isAddingHabit ? (
