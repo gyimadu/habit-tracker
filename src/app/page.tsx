@@ -8,6 +8,8 @@ import Image from 'next/image'
 interface Habit {
   id: string;
   name: string;
+  streak: number;
+  lastLoggedDate: string | null;
 }
 
 export default function Home() {
@@ -35,7 +37,9 @@ export default function Home() {
     if (newHabitName.trim()) {
       const newHabit = {
         id: `habit-${Date.now()}`, 
-        name: newHabitName.trim()
+        name: newHabitName.trim(),
+        streak: 0,
+        lastLoggedDate: null,
       };
       setHabits(prevHabits => [...prevHabits, newHabit]);
       setNewHabitName('');
