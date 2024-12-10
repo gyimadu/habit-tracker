@@ -53,61 +53,65 @@ export default function Home() {
   }
 
   return (
-    <main className="container mx-auto p-5 max-w-5xl">
+    <div>
       <NavBar />
-      <h1 className="text-3xl font-bold mb-6 text-center">Habits</h1>
-      
-      {/* New Habit Section */}
-      <div className="mb-10 text-center">
-        <p className="text-2l mb-4">A simpler way to track your habits everyday</p>
-        
-        {!isAddingHabit ? (
-          <button 
-            onClick={() => setIsAddingHabit(true)}
-            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-800 transition"
-          >
-            + Create Habit
-          </button>
-        ) : (
-          <div className="flex flex-col items-center space-y-3">
-            <input 
-              type="text"
-              value={newHabitName}
-              onChange={(e) => setNewHabitName(e.target.value)}
-              placeholder="Name"
-              className="block w-100 px-3 py-2 border rounded-lg text-white bg-black focus:outline-none"
-              onKeyDown={(e) => e.key === 'Enter' && addHabit()}
-            />
-            <button 
-              onClick={addHabit}
-              className="bg-gray-500 text-white px-4 py-1.5 rounded-lg hover:bg-blue-800"
-            >
-              Create!
-            </button>
-            <button 
-              onClick={() => setIsAddingHabit(false)}
-              className="bg-gray-300 text-black px-4 py-1.5 rounded-lg hover:bg-gray-400"
-            >
-              Cancel
-            </button>
-          </div>
-        )}
-      </div>
 
-      {/* Habits List */}
-      <div className="space-y-6">
-        {habits.map((habit) => (
-          <div key={habit.id} className="relative">
+      <main className="container mx-auto p-5 max-w-7xl">
+        
+        <div className="flex flex-col items-center justify-center h-screen mb-10 text-center">
+          <h1 className="text-6xl font-bold mb-6 text-center">Build better habits, everyday!</h1>
+
+          <p className="text-2l mb-4">Your go-to tool for building and maintaining great habits.</p>
+          
+          {!isAddingHabit ? (
             <button 
-              onClick={() => removeHabit(habit.id)}
-              className="absolute right-0 top-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs z-10"
+              onClick={() => setIsAddingHabit(true)}
+              className="bg-blue-500 text-white px-4 py-3 rounded-lg hover:bg-blue-800 transition"
             >
-              ×
+              + Create Habit
             </button>
-            <HabitCalendar habitName={habit.id} habitTitle={habit.name} />
-          </div>
-        ))}
-      </div>
-    </main>
+          ) : (
+            <div className="flex flex-col items-center space-y-3">
+              <input 
+                type="text"
+                value={newHabitName}
+                onChange={(e) => setNewHabitName(e.target.value)}
+                placeholder="Name"
+                className="block w-100 px-3 py-2 border rounded-lg text-white bg-black focus:outline-none"
+                onKeyDown={(e) => e.key === 'Enter' && addHabit()}
+              />
+              <button 
+                onClick={addHabit}
+                className="bg-gray-500 text-white px-4 py-1.5 rounded-lg hover:bg-blue-800"
+              >
+                Create!
+              </button>
+              <button 
+                onClick={() => setIsAddingHabit(false)}
+                className="bg-gray-300 text-black px-4 py-1.5 rounded-lg hover:bg-gray-400"
+              >
+                Cancel
+              </button>
+            </div>
+          )}
+        </div>
+
+        {/* Habits List */}
+        <div className="space-y-5">
+          {habits.map((habit) => (
+            <div key={habit.id} className="relative">
+              <button 
+                onClick={() => removeHabit(habit.id)}
+                className="absolute right-0 top-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs z-10"
+              >
+                ×
+              </button>
+              <HabitCalendar habitName={habit.id} habitTitle={habit.name} />
+            </div>
+          ))}
+        </div>
+      </main>
+    </div>
+    
   );
 }
