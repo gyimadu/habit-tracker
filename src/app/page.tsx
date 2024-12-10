@@ -60,7 +60,7 @@ export default function Home() {
       <main className="container mx-auto p-5 max-w-7xl">
           
         <div className="flex flex-col md:flex-row items-center justify-center h-screen mb-10 text-center">
-          <div className="text-center md:text-left">
+          <div className="text-left">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Build better habits, everyday!</h1>
             <p className="text-lg md:text-xl mb-4">Your go-to tool for building and maintaining great habits.</p>
             
