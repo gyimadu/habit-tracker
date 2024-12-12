@@ -16,6 +16,7 @@ const HabitCalendar: React.FC<HabitCalendarProps> = ({ habitName, habitTitle }) 
   );
   const currentYear = new Date().getFullYear();
   const currentDate = new Date();
+  currentDate.setHours(0, 0, 0, 0);
 
   const isFutureDate = (date: Date) => {
     return date > currentDate;
@@ -23,7 +24,8 @@ const HabitCalendar: React.FC<HabitCalendarProps> = ({ habitName, habitTitle }) 
 
   const isToday = (date: Date): boolean => {
     const today = new Date();
-    return formatDate(date, 'yyyy-MM-dd') === formatDate(today, 'yyyy-MM-dd');
+    today.setHours(0, 0, 0, 0);
+    return date.getTime() === today.getTime();
   };
 
   const toggleDayCompletion = (date: Date) => {
