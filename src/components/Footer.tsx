@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="container mx-auto px-4 py-16">
+    <footer className="container mx-auto px-4 py-16 mt-10">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t-2 pt-10">
         <div className="space-y-4">
           <h3 className="text-sm font-semibold text-gray-800">HABITS</h3>
