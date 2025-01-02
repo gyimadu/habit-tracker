@@ -93,41 +93,48 @@ const HabitCalendar: React.FC<HabitCalendarProps> = ({ habitName, habitTitle }) 
       </div>
       <div className="w-full overflow-x-auto">
         <div className="flex space-x-4 p-4 min-w-[1200px]">
-          {monthlyDays.map((monthDays, monthIndex) => (
-            <div 
-              key={monthIndex} 
-              className="flex flex-col items-center min-w-[240px]"
-            >
-              <h4 className="text-sm font-medium mb-2 text-gray-600">
-                {formatDate(monthDays[0], 'MMMM')}
-              </h4>
-              <div className="grid grid-cols-7 gap-1">
-                {monthDays.map((day) => {
-                  if (isFutureDate(day)) {
-                    return null; // Skip rendering future dates
-                  }
+          {monthlyDays.map((monthDays, monthIndex) => {
+            const isFutureMonth = monthDays.every(isFutureDate);
+            if (isFutureMonth) {
+              return null;
+            }
 
-                  return (
-                    <button
-                      key={formatDate(day, 'yyyy-MM-dd')}
-                      onClick={() => isToday(day) && toggleDayCompletion(day)}
-                      disabled={!isToday(day)}
-                      className={`
-                        w-8 h-8 rounded 
-                        ${completedDays[formatDate(day, 'yyyy-MM-dd')] 
-                          ? 'bg-green-500 text-white' 
-                          : 'bg-gray-200 text-gray-700'}
-                        ${!isToday(day) ? 'opacity-50 cursor-text' : 'hover:opacity-80'}
-                        transition-all text-xs flex items-center justify-center
-                      `}
-                    >
-                      {formatDate(day, 'd')}
-                  </button>
-                  );
-                })}
+            return (
+              <div 
+                key={monthIndex} 
+                className="flex flex-col items-center min-w-[240px]"
+              >
+                <h4 className="text-sm font-medium mb-2 text-gray-600">
+                  {formatDate(monthDays[0], 'MMMM')}
+                </h4>
+                <div className="grid grid-cols-7 gap-1">
+                  {monthDays.map((day) => {
+                    if (isFutureDate(day)) {
+                      return null; // Skip rendering future dates
+                    }
+
+                    return (
+                      <button
+                        key={formatDate(day, 'yyyy-MM-dd')}
+                        onClick={() => isToday(day) && toggleDayCompletion(day)}
+                        disabled={!isToday(day)}
+                        className={`
+                          w-8 h-8 rounded 
+                          ${completedDays[formatDate(day, 'yyyy-MM-dd')] 
+                            ? 'bg-green-500 text-white' 
+                            : 'bg-gray-200 text-gray-700'}
+                          ${!isToday(day) ? 'opacity-50 cursor-text' : 'hover:opacity-80'}
+                          transition-all text-xs flex items-center justify-center
+                        `}
+                      >
+                        {formatDate(day, 'd')}
+                    </button>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </div>
