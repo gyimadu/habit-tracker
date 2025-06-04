@@ -78,7 +78,7 @@ export default function Home() {
           </div>
 
           <div className="text-center md:text-left w-full md:w-6/12 mb-10 order-2 md:order-1">
-            <h1 className="text-5xl md:text-5xl font-semibold mb-6 md:leading-normal px-4 md:px-0">Track<br/> better with Zuno</h1>
+            <h1 className="text-5xl md:text-5xl font-semibold mb-6 md:leading-normal px-4 md:px-0">Track<br/> your workouts</h1>
             <p className="text-lg md:text-lg mb-4">Track. Achieve. Repeat</p>
             
             {!isAddingHabit ? (
