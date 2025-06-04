@@ -185,7 +185,7 @@ export default function Home() {
                 onClick={() => toggleFaq('how')}
               >
                 <h3 className="text-xl font-semibold text-gray-900">How does Zuno help me build better habits?</h3>
-                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['how'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+                <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['how'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['how'] && (
                 <p className="text-black text-base">
@@ -196,11 +196,11 @@ export default function Home() {
 
             <div className="space-y-2">
               <div 
-                className="flex justify-between items-center cursor-pointer"
+                className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFaq('data')}
               >
                 <h3 className="text-xl font-semibold text-gray-900">Where is my data stored and is it safe?</h3>
-                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['data'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+                <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['data'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['data'] && (
                 <p className="text-black text-base">
@@ -211,11 +211,11 @@ export default function Home() {
 
             <div className="space-y-2">
               <div 
-                className="flex justify-between items-center cursor-pointer"
+                className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFaq('privacy')}
               >
                 <h3 className="text-xl font-semibold text-gray-900">Does Zuno share my data with third parties?</h3>
-                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['privacy'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+                <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['privacy'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['privacy'] && (
                 <p className="text-black text-base">
@@ -226,26 +226,11 @@ export default function Home() {
 
             <div className="space-y-2">
               <div 
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleFaq('streak')}
-              >
-                <h3 className="text-xl font-semibold text-gray-900">What happens if I miss a day?</h3>
-                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['streak'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
-              </div>
-              {expandedFaqs['streak'] && (
-                <p className="text-black text-base">
-                  We offer a 24-hour grace period and &quot;streak freezes&quot; to maintain your streak during planned breaks.
-                </p>
-              )}
-            </div>
-
-            <div className="space-y-2">
-              <div 
-                className="flex justify-between items-center cursor-pointer"
+                className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFaq('mobile')}
               >
                 <h3 className="text-xl font-semibold text-gray-900">Is Zuno available on mobile devices?</h3>
-                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['mobile'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+                <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['mobile'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['mobile'] && (
                 <p className="text-black text-base">
@@ -256,11 +241,11 @@ export default function Home() {
 
             <div className="space-y-2">
               <div 
-                className="flex justify-between items-center cursor-pointer"
+                className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFaq('free')}
               >
                 <h3 className="text-xl font-semibold text-gray-900">Will Zuno always be free?</h3>
-                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['free'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+                <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['free'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['free'] && (
                 <p className="text-black text-base">
@@ -271,11 +256,11 @@ export default function Home() {
 
             <div className="space-y-2">
               <div 
-                className="flex justify-between items-center cursor-pointer"
+                className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFaq('plans')}
               >
                 <h3 className="text-xl font-semibold text-gray-900">What&apos;s included in free vs. premium?</h3>
-                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['plans'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+                <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['plans'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['plans'] && (
                 <p className="text-black text-base">
@@ -286,11 +271,11 @@ export default function Home() {
 
             <div className="space-y-2">
               <div 
-                className="flex justify-between items-center cursor-pointer"
+                className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFaq('support')}
               >
                 <h3 className="text-xl font-semibold text-gray-900">How do I get support?</h3>
-                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['support'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+                <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['support'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['support'] && (
                 <p className="text-black text-base">
@@ -301,11 +286,11 @@ export default function Home() {
 
             <div className="space-y-2">
               <div 
-                className="flex justify-between items-center cursor-pointer"
+                className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFaq('feedback')}
               >
                 <h3 className="text-xl font-semibold text-gray-900">Can I request features or report bugs?</h3>
-                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['feedback'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+                <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['feedback'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['feedback'] && (
                 <p className="text-black text-base">
