@@ -174,7 +174,7 @@ export default function Home() {
 
         {/* FAQ Section */}
         <div className="mt-32 mb-20 px-4 md:px-0">
-          <h2 className="text-4xl md:text-5xl font-bold text-left md:text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-left md:text-center mb-16">
             Frequently Asked Questions
           </h2>
           
@@ -184,11 +184,11 @@ export default function Home() {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFaq('how')}
               >
-                <h3 className="text-xl font-bold text-gray-900">How does Zuno help me build better habits?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">How does Zuno help me build better habits?</h3>
                 <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['how'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['how'] && (
-                <p className="text-black text-lg">
+                <p className="text-black text-base">
                   Zuno combines AI insights with proven techniques to help you track and maintain habits through personalized suggestions and progress tracking.
                 </p>
               )}
@@ -199,11 +199,11 @@ export default function Home() {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFaq('data')}
               >
-                <h3 className="text-xl font-bold text-gray-900">Where is my data stored and is it safe?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Where is my data stored and is it safe?</h3>
                 <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['data'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['data'] && (
-                <p className="text-black text-lg">
+                <p className="text-black text-base">
                   Data is stored locally by default with encrypted cloud sync. We use industry-standard security measures and never store sensitive information.
                 </p>
               )}
@@ -214,11 +214,11 @@ export default function Home() {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFaq('privacy')}
               >
-                <h3 className="text-xl font-bold text-gray-900">Does Zuno share my data with third parties?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Does Zuno share my data with third parties?</h3>
                 <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['privacy'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['privacy'] && (
-                <p className="text-black text-lg">
+                <p className="text-black text-base">
                   No, we never share your personal data. We only use anonymized data to improve our service.
                 </p>
               )}
@@ -229,11 +229,11 @@ export default function Home() {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFaq('customize')}
               >
-                <h3 className="text-xl font-bold text-gray-900">Can I customize my habit reminders?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Can I customize my habit reminders?</h3>
                 <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['customize'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['customize'] && (
-                <p className="text-black text-lg">
+                <p className="text-black text-base">
                   Yes! Set custom reminder times, choose notification styles, and create different schedules for weekdays and weekends.
                 </p>
               )}
@@ -244,11 +244,11 @@ export default function Home() {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFaq('streak')}
               >
-                <h3 className="text-xl font-bold text-gray-900">What happens if I miss a day?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">What happens if I miss a day?</h3>
                 <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['streak'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['streak'] && (
-                <p className="text-black text-lg">
+                <p className="text-black text-base">
                   We offer a 24-hour grace period and &quot;streak freezes&quot; to maintain your streak during planned breaks.
                 </p>
               )}
@@ -259,11 +259,11 @@ export default function Home() {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFaq('mobile')}
               >
-                <h3 className="text-xl font-bold text-gray-900">Is Zuno available on mobile devices?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Is Zuno available on mobile devices?</h3>
                 <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['mobile'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['mobile'] && (
-                <p className="text-black text-lg">
+                <p className="text-black text-base">
                   Yes! The web version is mobile-optimized, and native iOS/Android apps are coming soon.
                 </p>
               )}
@@ -274,11 +274,11 @@ export default function Home() {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFaq('offline')}
               >
-                <h3 className="text-xl font-bold text-gray-900">Do I need an internet connection?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Do I need an internet connection?</h3>
                 <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['offline'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['offline'] && (
-                <p className="text-black text-lg">
+                <p className="text-black text-base">
                   Basic tracking works offline. Data syncs automatically when you&apos;re back online.
                 </p>
               )}
@@ -289,11 +289,11 @@ export default function Home() {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFaq('export')}
               >
-                <h3 className="text-xl font-bold text-gray-900">Can I export my habit data?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Can I export my habit data?</h3>
                 <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['export'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['export'] && (
-                <p className="text-black text-lg">
+                <p className="text-black text-base">
                   Yes, export in CSV or JSON format. Premium users will get more detailed analytics.
                 </p>
               )}
@@ -304,11 +304,11 @@ export default function Home() {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFaq('free')}
               >
-                <h3 className="text-xl font-bold text-gray-900">Will Zuno always be free?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Will Zuno always be free?</h3>
                 <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['free'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['free'] && (
-                <p className="text-black text-lg">
+                <p className="text-black text-base">
                   Yes, core features will always be free. Premium features will be optional.
                 </p>
               )}
@@ -319,11 +319,11 @@ export default function Home() {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFaq('plans')}
               >
-                <h3 className="text-xl font-bold text-gray-900">What&apos;s included in free vs. premium?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">What&apos;s included in free vs. premium?</h3>
                 <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['plans'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['plans'] && (
-                <p className="text-black text-lg">
+                <p className="text-black text-base">
                   Free: unlimited tracking and basic features. Premium: advanced analytics, templates, and integrations.
                 </p>
               )}
@@ -334,11 +334,11 @@ export default function Home() {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFaq('support')}
               >
-                <h3 className="text-xl font-bold text-gray-900">How do I get support?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">How do I get support?</h3>
                 <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['support'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['support'] && (
-                <p className="text-black text-lg">
+                <p className="text-black text-base">
                   Contact us at support@zuno.app or use the in-app feedback form. We respond within 24 hours.
                 </p>
               )}
@@ -349,11 +349,11 @@ export default function Home() {
                 className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFaq('feedback')}
               >
-                <h3 className="text-xl font-bold text-gray-900">Can I request features or report bugs?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Can I request features or report bugs?</h3>
                 <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['feedback'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['feedback'] && (
-                <p className="text-black text-lg">
+                <p className="text-black text-base">
                   Yes! Use the feedback form or email feedback@zuno.app. We review all submissions.
                 </p>
               )}
