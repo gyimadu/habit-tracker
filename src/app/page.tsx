@@ -134,29 +134,29 @@ export default function Home() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <div className="space-y-2">
-              <h3 className="text-2xl font-semibold text-blue-700">Smart Habit Suggestions</h3>
+            <div className="space-y-1 py-4 px-3 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-bold text-blue-700">Smart Habit Suggestions</h3>
               <p className="text-gray-800 text-lg">
                 Get personalized habit ideas based on your goals and behavior patterns.
               </p>
             </div>
 
-            <div className="space-y-2">
-              <h3 className="text-2xl font-semibold text-purple-700">AI-Powered Reminders</h3>
+            <div className="space-y-1 py-4 px-3 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-bold text-purple-700">AI-Powered Reminders</h3>
               <p className="text-gray-800 text-lg">
                 Receive intelligent nudges at the right time to keep you on track.
               </p>
             </div>
 
-            <div className="space-y-2">
-              <h3 className="text-2xl font-semibold text-black">Streak Tracking</h3>
+            <div className="space-y-1 py-4 px-3 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-bold text-black">Streak Tracking</h3>
               <p className="text-gray-800 text-lg">
                 Track your consistency with visual streaks and stay motivated with rewards. View detailed insights that show how your habits evolve over time.
               </p>
             </div>
 
-            <div className="space-y-2">
-              <h3 className="text-2xl font-semibold text-amber-600">Mood Logging</h3>
+            <div className="space-y-1 py-4 px-3 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
+              <h3 className="text-xl font-bold text-amber-600">Mood Logging</h3>
               <p className="text-gray-800 text-lg">
                 Log your mood and energy levels to discover what drives your habits.
               </p>
