@@ -12,8 +12,23 @@ export default function NavBar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleScrollToSection = (sectionId: string) => {
+    setIsMenuOpen(false);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navHeight = 72; // Height of navbar
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white z-50">
+    <nav className="fixed w-full top-0 left-0 right-0 bg-white z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold">
@@ -22,18 +37,18 @@ export default function NavBar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            <Link 
-              href="/#features" 
+            <button 
+              onClick={() => handleScrollToSection('features')}
               className={`hover:text-blue-600 transition-colors ${pathname === '/' ? 'text-blue-600' : 'text-gray-600'}`}
             >
               Features
-            </Link>
-            <Link 
-              href="/#faq" 
+            </button>
+            <button 
+              onClick={() => handleScrollToSection('faq')}
               className={`hover:text-blue-600 transition-colors ${pathname === '/' ? 'text-blue-600' : 'text-gray-600'}`}
             >
               FAQ
-            </Link>
+            </button>
             <Link 
               href="/about" 
               className={`hover:text-blue-600 transition-colors ${pathname === '/about' ? 'text-blue-600' : 'text-gray-600'}`}
@@ -63,20 +78,18 @@ export default function NavBar() {
       >
         <div className="container mx-auto px-4 py-4">
           <div className="flex flex-col space-y-4">
-            <Link 
-              href="/#features" 
-              className={`text-lg hover:text-blue-600 transition-colors ${pathname === '/' ? 'text-blue-600' : 'text-gray-600'}`}
-              onClick={() => setIsMenuOpen(false)}
+            <button 
+              onClick={() => handleScrollToSection('features')}
+              className={`text-lg hover:text-blue-600 transition-colors text-left ${pathname === '/' ? 'text-blue-600' : 'text-gray-600'}`}
             >
               Features
-            </Link>
-            <Link 
-              href="/#faq" 
-              className={`text-lg hover:text-blue-600 transition-colors ${pathname === '/' ? 'text-blue-600' : 'text-gray-600'}`}
-              onClick={() => setIsMenuOpen(false)}
+            </button>
+            <button 
+              onClick={() => handleScrollToSection('faq')}
+              className={`text-lg hover:text-blue-600 transition-colors text-left ${pathname === '/' ? 'text-blue-600' : 'text-gray-600'}`}
             >
               FAQ
-            </Link>
+            </button>
             <Link 
               href="/about" 
               className={`text-lg hover:text-blue-600 transition-colors ${pathname === '/about' ? 'text-blue-600' : 'text-gray-600'}`}
