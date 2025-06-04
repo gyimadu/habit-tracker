@@ -66,7 +66,7 @@ export default function Home() {
           
         <div className="flex flex-col md:flex-row items-center justify-center h-screen mt-0 pt-5 md:pt-0 md:mt-0 mb-10 text-center">
           <div className="text-center md:text-left w-full md:w-6/12 mb-10">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 md:leading-normal">Simplified progress tracking, for you!</h1>
+            <h1 className="text-5xl md:text-5xl font-bold mb-6 md:leading-normal">Build better routines with Zuno</h1>
             <p className="text-base md:text-lg mb-4">Track. Achieve. Repeat</p>
             
             {!isAddingHabit ? (
