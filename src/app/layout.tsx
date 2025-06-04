@@ -7,7 +7,7 @@ const lexend = Lexend({
     subsets: ["latin"],
     variable: "--font-lexend",
     weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-    display: "block",
+    display: "swap",
     preload: true,
     fallback: ["system-ui", "sans-serif"],
 });
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={lexend.variable}>
       <head>
         <link
           rel="preconnect"
