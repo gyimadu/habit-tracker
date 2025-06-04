@@ -136,8 +136,8 @@ export default function Home() {
         </div>
 
         {/* Features Section */}
-        <div className="mt-32 mb-20 px-4 md:px-0">
-          <h2 className="text-4xl md:text-5xl font-bold text-left md:text-center mb-16">
+        <div id="features" className="mt-32 mb-20 px-4 md:px-0">
+          <h2 className="text-3xl md:text-5xl font-bold text-left md:text-center mb-16">
             Turn intentions into action—without burnout
           </h2>
           
@@ -173,7 +173,7 @@ export default function Home() {
         </div>
 
         {/* FAQ Section */}
-        <div className="mt-32 mb-20 px-4 md:px-0">
+        <div id="faq" className="mt-32 mb-20 px-4 md:px-0">
           <h2 className="text-3xl md:text-5xl font-bold text-left md:text-center mb-16">
             Frequently Asked Questions
           </h2>
