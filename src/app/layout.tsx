@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
 import { Lexend } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react"
@@ -8,20 +7,9 @@ const lexend = Lexend({
     subsets: ["latin"],
     variable: "--font-lexend",
     weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
-    display: "swap",
+    display: "block",
     preload: true,
-    adjustFontFallback: true,
-});
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+    fallback: ["system-ui", "sans-serif"],
 });
 
 export const metadata: Metadata = {
@@ -36,8 +24,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body
-        className={`${lexend.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${lexend.variable} antialiased`}
       >
         {children}
         <Analytics />

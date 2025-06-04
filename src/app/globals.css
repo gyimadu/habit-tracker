@@ -5,7 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-lexend: "Lexend", sans-serif;
+  --font-lexend: "Lexend", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 /*@media (prefers-color-scheme: dark) {
@@ -14,6 +14,12 @@
     --foreground: #ededed;
   }
 }*/
+
+@layer base {
+  html {
+    font-family: var(--font-lexend);
+  }
+}
 
 body {
   color: var(--foreground);
