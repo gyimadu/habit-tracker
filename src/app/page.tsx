@@ -73,7 +73,7 @@ export default function Home() {
       <main className="container mx-auto p-5 max-w-6xl">
           
         <div className="flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-5rem)] mt-15 text-center">
-          <div className="md:flex w-full md:w-6/12 md:justify-end order-1 md:order-2 mb-10 md:mb-0">
+          <div className="md:flex w-full md:w-6/12 md:justify-end order-1 md:order-2 mb-2 md:mb-0">
             <LottieAnimation />
           </div>
 
