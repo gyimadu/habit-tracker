@@ -5,6 +5,8 @@ import HabitCalendar from '@/components/HabitCalendar';
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
 import LottieAnimation from '@/components/LottieAnimation'
+import { DotLottieReact } from '@lottiefiles/dotlottie-react'
+
 
 interface Habit {
   id: string;
@@ -144,11 +146,18 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="space-y-1 py-1">
+            <div className="space-y-1 flex flex-col md:flex-row items-center justify-center py-1">
               <h3 className="text-xl mb-2 font-bold text-purple-700">Workout Logging</h3>
               <p className="text-black text-lg">
                 Quickly log sets, reps, and weight to track your progress.
               </p>
+              <DotLottieReact
+                src="https://lottie.host/3cd51b39-9186-42a0-a1bf-9941c7c2f746/nBUVpFdtFy.lottie"
+                speed={1}
+                style={{ width: '200px', height: '200px' }}
+                loop
+                autoplay
+              />
             </div>
 
             <div className="space-y-1 py-1">
