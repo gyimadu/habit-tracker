@@ -72,7 +72,7 @@ export default function Home() {
 
       <main className="container mx-auto p-5 max-w-6xl">
           
-        <div className="flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-5rem)] mt-16 text-center">
+        <div className="flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-5rem)] mt-20 text-center">
           <div className="text-center md:text-left w-full md:w-6/12 mb-10">
             <h1 className="text-5xl md:text-5xl font-semibold mb-6 md:leading-normal px-4 md:px-0">Track<br/> better with Zuno</h1>
             <p className="text-lg md:text-lg mb-4">Track. Achieve. Repeat</p>
