@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import HabitCalendar from '@/components/HabitCalendar';
 import NavBar from '@/components/NavBar'
 import Footer from '@/components/Footer'
+import LottieAnimation from '@/components/LottieAnimation'
 
 interface Habit {
   id: string;
@@ -73,18 +74,7 @@ export default function Home() {
           
         <div className="flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-5rem)] mt-15 text-center">
           <div className="md:flex w-full md:w-6/12 md:justify-end order-1 md:order-2 mb-10 md:mb-0">
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls={false}
-              className="w-full h-auto"
-              style={{ maxWidth: '100%' }}
-            >
-              <source src="/new.mov" type="video/quicktime" />
-              Your browser does not support the video tag.
-            </video>
+            <LottieAnimation />
           </div>
 
           <div className="text-center md:text-left w-full md:w-6/12 mb-10 order-2 md:order-1">
