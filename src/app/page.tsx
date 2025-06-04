@@ -66,13 +66,13 @@ export default function Home() {
           
         <div className="flex flex-col md:flex-row items-center justify-center h-screen mt-0 pt-5 md:pt-0 md:mt-0 mb-10 text-center">
           <div className="text-center md:text-left w-full md:w-6/12 mb-10">
-            <h1 className="text-5xl md:text-5xl font-semibold mb-6 md:leading-normal">Build better routines with Zuno</h1>
+            <h1 className="text-5xl md:text-5xl font-semibold mb-6 md:leading-normal">Achieve faster with Zuno</h1>
             <p className="text-lg md:text-lg mb-4">Track. Achieve. Repeat</p>
             
             {!isAddingHabit ? (
               <button 
                 onClick={() => setIsAddingHabit(true)}
-                className="bg-blue-500 border-blue-500 text-white px-4 py-2.5 rounded-lg hover:bg-blue-800 transition"
+                className="bg-blue-600 border-blue-600 text-white px-4 py-2.5 rounded-lg hover:bg-blue-800 transition"
               >
                 + Get Started
               </button>
