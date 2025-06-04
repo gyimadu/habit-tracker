@@ -18,6 +18,7 @@ export default function Home() {
   const [newHabitName, setNewHabitName] = useState('');
   const [isAddingHabit, setIsAddingHabit] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const [expandedFaqs, setExpandedFaqs] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
     const storedHabits = localStorage.getItem('habits');
@@ -52,6 +53,13 @@ export default function Home() {
   const removeHabit = (id: string) => {
     setHabits(prevHabits => prevHabits.filter(habit => habit.id !== id));
     localStorage.removeItem(`habit-${id}`);
+  };
+
+  const toggleFaq = (id: string) => {
+    setExpandedFaqs(prev => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
   };
 
   if (!isClient) {
@@ -172,87 +180,183 @@ export default function Home() {
           
           <div className="max-w-3xl mx-auto space-y-8">
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-gray-900">How does Zuno help me build better habits?</h3>
-              <p className="text-black text-lg">
-                Zuno combines AI-powered insights with proven habit-forming techniques to help you identify, track, and maintain your habits. We provide personalized suggestions, timely reminders, and visual progress tracking to keep you motivated.
-              </p>
+              <div 
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleFaq('how')}
+              >
+                <h3 className="text-xl font-bold text-gray-900">How does Zuno help me build better habits?</h3>
+                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['how'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+              </div>
+              {expandedFaqs['how'] && (
+                <p className="text-black text-lg">
+                  Zuno combines AI insights with proven techniques to help you track and maintain habits through personalized suggestions and progress tracking.
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-gray-900">Where is my data stored and is it safe?</h3>
-              <p className="text-black text-lg">
-                Your data is stored locally on your device by default. For syncing across devices, we use encrypted cloud storage with industry-standard security measures. We never store sensitive personal information, and all data transfers are encrypted using SSL/TLS protocols.
-              </p>
+              <div 
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleFaq('data')}
+              >
+                <h3 className="text-xl font-bold text-gray-900">Where is my data stored and is it safe?</h3>
+                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['data'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+              </div>
+              {expandedFaqs['data'] && (
+                <p className="text-black text-lg">
+                  Data is stored locally by default with encrypted cloud sync. We use industry-standard security measures and never store sensitive information.
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-gray-900">Does Zuno share my data with third parties?</h3>
-              <p className="text-black text-lg">
-                No, we never share your personal data with third parties. Your habit data is yours alone. We use anonymized, aggregated data only for improving our service and understanding usage patterns. You can read our detailed privacy policy for more information.
-              </p>
+              <div 
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleFaq('privacy')}
+              >
+                <h3 className="text-xl font-bold text-gray-900">Does Zuno share my data with third parties?</h3>
+                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['privacy'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+              </div>
+              {expandedFaqs['privacy'] && (
+                <p className="text-black text-lg">
+                  No, we never share your personal data. We only use anonymized data to improve our service.
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-gray-900">Can I customize my habit reminders or schedule?</h3>
-              <p className="text-black text-lg">
-                Yes! You can set custom reminder times for each habit, choose your preferred notification style, and even set up different schedules for weekdays and weekends. Our smart scheduling system will also learn from your completion patterns to suggest optimal reminder times.
-              </p>
+              <div 
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleFaq('customize')}
+              >
+                <h3 className="text-xl font-bold text-gray-900">Can I customize my habit reminders?</h3>
+                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['customize'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+              </div>
+              {expandedFaqs['customize'] && (
+                <p className="text-black text-lg">
+                  Yes! Set custom reminder times, choose notification styles, and create different schedules for weekdays and weekends.
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-gray-900">What happens if I miss a day—does my streak reset?</h3>
-              <p className="text-black text-lg">
-                We understand that life happens! Your streak won't reset immediately if you miss a day. We offer a 24-hour grace period, and you can also use "streak freezes" to maintain your streak during planned breaks. This helps you stay motivated while being realistic about habit formation.
-              </p>
+              <div 
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleFaq('streak')}
+              >
+                <h3 className="text-xl font-bold text-gray-900">What happens if I miss a day?</h3>
+                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['streak'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+              </div>
+              {expandedFaqs['streak'] && (
+                <p className="text-black text-lg">
+                  We offer a 24-hour grace period and &quot;streak freezes&quot; to maintain your streak during planned breaks.
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-gray-900">Is Zuno available on mobile devices?</h3>
-              <p className="text-black text-lg">
-                Yes! Zuno is fully responsive and works on all devices. We're currently developing native mobile apps for iOS and Android, which will be available soon. The web version is already optimized for mobile use, so you can start tracking your habits right away.
-              </p>
+              <div 
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleFaq('mobile')}
+              >
+                <h3 className="text-xl font-bold text-gray-900">Is Zuno available on mobile devices?</h3>
+                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['mobile'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+              </div>
+              {expandedFaqs['mobile'] && (
+                <p className="text-black text-lg">
+                  Yes! The web version is mobile-optimized, and native iOS/Android apps are coming soon.
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-gray-900">Do I need an internet connection to use Zuno?</h3>
-              <p className="text-black text-lg">
-                You can use Zuno offline for basic habit tracking. Your data will sync automatically when you're back online. However, some features like AI-powered suggestions and cross-device syncing require an internet connection.
-              </p>
+              <div 
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleFaq('offline')}
+              >
+                <h3 className="text-xl font-bold text-gray-900">Do I need an internet connection?</h3>
+                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['offline'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+              </div>
+              {expandedFaqs['offline'] && (
+                <p className="text-black text-lg">
+                  Basic tracking works offline. Data syncs automatically when you&apos;re back online.
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-gray-900">Can I back up or export my habit data?</h3>
-              <p className="text-black text-lg">
-                Yes, you can export your habit data at any time in CSV or JSON format. We also provide automatic backups of your data. Premium users will get access to more detailed analytics and export options in the future.
-              </p>
+              <div 
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleFaq('export')}
+              >
+                <h3 className="text-xl font-bold text-gray-900">Can I export my habit data?</h3>
+                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['export'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+              </div>
+              {expandedFaqs['export'] && (
+                <p className="text-black text-lg">
+                  Yes, export in CSV or JSON format. Premium users will get more detailed analytics.
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-gray-900">Will Zuno always be free?</h3>
-              <p className="text-black text-lg">
-                Yes, the core habit tracking features will always be free. We're committed to keeping the essential functionality accessible to everyone. Future premium features will be optional and focused on advanced analytics and customization.
-              </p>
+              <div 
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleFaq('free')}
+              >
+                <h3 className="text-xl font-bold text-gray-900">Will Zuno always be free?</h3>
+                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['free'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+              </div>
+              {expandedFaqs['free'] && (
+                <p className="text-black text-lg">
+                  Yes, core features will always be free. Premium features will be optional.
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-gray-900">What's included in the free vs. premium plan?</h3>
-              <p className="text-black text-lg">
-                The free plan includes unlimited habit tracking, basic streak tracking, and essential reminders. The upcoming premium plan will add advanced analytics, custom habit templates, integration with health apps, and priority support. All core features will remain free.
-              </p>
+              <div 
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleFaq('plans')}
+              >
+                <h3 className="text-xl font-bold text-gray-900">What&apos;s included in free vs. premium?</h3>
+                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['plans'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+              </div>
+              {expandedFaqs['plans'] && (
+                <p className="text-black text-lg">
+                  Free: unlimited tracking and basic features. Premium: advanced analytics, templates, and integrations.
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-gray-900">Who do I contact for support or feedback?</h3>
-              <p className="text-black text-lg">
-                You can reach our support team at support@zuno.app or use the feedback form in the app. We typically respond within 24 hours. We also have an active community forum where you can connect with other users and share tips.
-              </p>
+              <div 
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleFaq('support')}
+              >
+                <h3 className="text-xl font-bold text-gray-900">How do I get support?</h3>
+                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['support'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+              </div>
+              {expandedFaqs['support'] && (
+                <p className="text-black text-lg">
+                  Contact us at support@zuno.app or use the in-app feedback form. We respond within 24 hours.
+                </p>
+              )}
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-gray-900">Can I request a feature or report a bug?</h3>
-              <p className="text-black text-lg">
-                Absolutely! We welcome all feedback. You can submit feature requests and bug reports through the app's feedback form or email us at feedback@zuno.app. Our team reviews all submissions, and we regularly update our roadmap based on user suggestions.
-              </p>
+              <div 
+                className="flex justify-between items-center cursor-pointer"
+                onClick={() => toggleFaq('feedback')}
+              >
+                <h3 className="text-xl font-bold text-gray-900">Can I request features or report bugs?</h3>
+                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['feedback'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
+              </div>
+              {expandedFaqs['feedback'] && (
+                <p className="text-black text-lg">
+                  Yes! Use the feedback form or email feedback@zuno.app. We review all submissions.
+                </p>
+              )}
             </div>
           </div>
         </div>
