@@ -181,7 +181,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto space-y-8">
             <div className="space-y-2">
               <div 
-                className="flex justify-between items-center cursor-pointer"
+                className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFaq('how')}
               >
                 <h3 className="text-xl font-semibold text-gray-900">How does Zuno help me build better habits?</h3>
@@ -227,21 +227,6 @@ export default function Home() {
             <div className="space-y-2">
               <div 
                 className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleFaq('customize')}
-              >
-                <h3 className="text-xl font-semibold text-gray-900">Can I customize my habit reminders?</h3>
-                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['customize'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
-              </div>
-              {expandedFaqs['customize'] && (
-                <p className="text-black text-base">
-                  Yes! Set custom reminder times, choose notification styles, and create different schedules for weekdays and weekends.
-                </p>
-              )}
-            </div>
-
-            <div className="space-y-2">
-              <div 
-                className="flex justify-between items-center cursor-pointer"
                 onClick={() => toggleFaq('streak')}
               >
                 <h3 className="text-xl font-semibold text-gray-900">What happens if I miss a day?</h3>
@@ -265,36 +250,6 @@ export default function Home() {
               {expandedFaqs['mobile'] && (
                 <p className="text-black text-base">
                   Yes! The web version is mobile-optimized, and native iOS/Android apps are coming soon.
-                </p>
-              )}
-            </div>
-
-            <div className="space-y-2">
-              <div 
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleFaq('offline')}
-              >
-                <h3 className="text-xl font-semibold text-gray-900">Do I need an internet connection?</h3>
-                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['offline'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
-              </div>
-              {expandedFaqs['offline'] && (
-                <p className="text-black text-base">
-                  Basic tracking works offline. Data syncs automatically when you&apos;re back online.
-                </p>
-              )}
-            </div>
-
-            <div className="space-y-2">
-              <div 
-                className="flex justify-between items-center cursor-pointer"
-                onClick={() => toggleFaq('export')}
-              >
-                <h3 className="text-xl font-semibold text-gray-900">Can I export my habit data?</h3>
-                <span className={`text-2xl font-light transition-transform duration-300 ${expandedFaqs['export'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
-              </div>
-              {expandedFaqs['export'] && (
-                <p className="text-black text-base">
-                  Yes, export in CSV or JSON format. Premium users will get more detailed analytics.
                 </p>
               )}
             </div>
