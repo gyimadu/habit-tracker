@@ -147,7 +147,7 @@ export default function Home() {
               <DotLottieReact
                 src="https://lottie.host/3cd51b39-9186-42a0-a1bf-9941c7c2f746/nBUVpFdtFy.lottie"
                 speed={1}
-                style={{ width: '200px', height: '200px' }}
+                style={{ width: '150px', height: '150px' }}
                 loop
                 autoplay
               />
@@ -161,7 +161,7 @@ export default function Home() {
               <DotLottieReact
                 src="https://lottie.host/7167d69b-bb1e-4fee-98d7-1c43b3ba7778/NTwxFynZek.lottie"
                 speed={1}
-                style={{ width: '200px', height: '200px' }}
+                style={{ width: '150px', height: '150px' }}
                 loop
                 autoplay
               />
@@ -175,7 +175,7 @@ export default function Home() {
               <DotLottieReact
                 src="https://lottie.host/486ef9f4-54c6-4648-99d2-55092ef79db6/e6NnVlZsSk.lottie"
                 speed={1}
-                style={{ width: '200px', height: '200px' }}
+                style={{ width: '150px', height: '150px' }}
                 loop
                 autoplay
               />
@@ -187,9 +187,9 @@ export default function Home() {
                 Create and save your own custom workout plans and splits to fit your schedule and goals.
               </p>
               <DotLottieReact
-                src="https://lottie.host/3cd51b39-9186-42a0-a1bf-9941c7c2f746/nBUVpFdtFy.lottie"
+                src="https://lottie.host/a1c5c9a0-9894-4fc3-82ee-882c36ed7b0b/S7WFAKr0YU.lottie"
                 speed={1}
-                style={{ width: '200px', height: '200px' }}
+                style={{ width: '150px', height: '150px' }}
                 loop
                 autoplay
               />
