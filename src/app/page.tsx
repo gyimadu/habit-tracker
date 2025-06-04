@@ -140,8 +140,8 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <div className="space-y-1 flex flex-col md:flex-row items-center justify-center py-1">
-              <h3 className="text-xl mb-2 text-left md:text-center font-bold text-blue-700">Personalized Suggestions</h3>
-              <p className="text-black text-lg">
+              <h3 className="text-xl mb-2 font-bold text-blue-700">Personalized Suggestions</h3>
+              <p className="text-black text-center text-lg">
                 Get personalized workout plans based on your goals and time commitment.
               </p>
               <DotLottieReact
@@ -154,8 +154,8 @@ export default function Home() {
             </div>
 
             <div className="space-y-1 flex flex-col md:flex-row items-center justify-center py-1">
-              <h3 className="text-xl mb-2 text-left md:text-center font-bold text-purple-700">Workout Logging</h3>
-              <p className="text-black text-lg">
+              <h3 className="text-xl mb-2 font-bold text-purple-700">Workout Logging</h3>
+              <p className="text-black text-center text-lg">
                 Quickly log sets, reps, and weight to track your progress.
               </p>
               <DotLottieReact
@@ -168,8 +168,8 @@ export default function Home() {
             </div>
 
             <div className="space-y-1 flex flex-col md:flex-row items-center justify-center py-1">
-              <h3 className="text-xl mb-2 text-left md:text-center font-bold text-black">Streak Tracking</h3>
-              <p className="text-black text-lg">
+              <h3 className="text-xl mb-2 font-bold text-black">Streak Tracking</h3>
+              <p className="text-black text-center text-lg">
                 Track your consistency with visual streaks and in-app rewards.
               </p>
               <DotLottieReact
@@ -182,8 +182,8 @@ export default function Home() {
             </div>
 
             <div className="space-y-1 flex flex-col md:flex-row items-center justify-center py-1">
-              <h3 className="text-xl mb-2 text-left md:text-center font-bold text-amber-600">Custom Workouts</h3>
-              <p className="text-black text-lg">
+              <h3 className="text-xl mb-2 font-bold text-amber-600">Custom Workouts</h3>
+              <p className="text-black text-center text-lg">
                 Create and save your own custom workout plans and splits to fit your schedule and goals.
               </p>
               <DotLottieReact
