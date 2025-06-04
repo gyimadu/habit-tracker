@@ -8,6 +8,9 @@ const lexend = Lexend({
     subsets: ["latin"],
     variable: "--font-lexend",
     weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+    display: "swap",
+    preload: true,
+    adjustFontFallback: true,
 });
 
 const geistSans = localFont({
