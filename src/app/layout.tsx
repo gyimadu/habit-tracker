@@ -1,15 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Poppins } from "next/font/google";
+import { Lexend } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react"
 
-const poppins = Poppins({
-    subsets: ["latin", "latin-ext"],
-    variable: "--font-poppins",
-    weight: ["100", "200", "400", "600", "800"], 
+const lexend = Lexend({
+    subsets: ["latin"],
+    variable: "--font-lexend",
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
 });
-
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${poppins.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${lexend.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
         <Analytics />

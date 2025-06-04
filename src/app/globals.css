@@ -5,7 +5,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-poppins: "Poppins", sans-serif;
+  --font-lexend: "Lexend", sans-serif;
 }
 
 /*@media (prefers-color-scheme: dark) {
@@ -18,5 +18,5 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-poppins);
+  font-family: var(--font-lexend);
 }
