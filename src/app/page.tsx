@@ -138,30 +138,30 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <div className="space-y-1 py-1">
-              <h3 className="text-xl mb-2 font-bold text-blue-700">Smart Habit Suggestions</h3>
+              <h3 className="text-xl mb-2 font-bold text-blue-700">Personalized Suggestions</h3>
               <p className="text-black text-lg">
-                Get personalized habit ideas based on your goals and behavior patterns.
+                Get personalized workout plans based on your goals and time commitment.
               </p>
             </div>
 
             <div className="space-y-1 py-1">
-              <h3 className="text-xl mb-2 font-bold text-purple-700">AI-Powered Reminders</h3>
+              <h3 className="text-xl mb-2 font-bold text-purple-700">Workout Logging</h3>
               <p className="text-black text-lg">
-                Receive intelligent nudges at the right time to keep you on track.
+                Quickly log sets, reps, and weight to track your progress.
               </p>
             </div>
 
             <div className="space-y-1 py-1">
               <h3 className="text-xl mb-2 font-bold text-black">Streak Tracking</h3>
               <p className="text-black text-lg">
-                Track your consistency with visual streaks and stay motivated with rewards.
+                Track your consistency with visual streaks and in-app rewards.
               </p>
             </div>
 
             <div className="space-y-1 py-1">
-              <h3 className="text-xl mb-2 font-bold text-amber-600">Mood Logging</h3>
+              <h3 className="text-xl mb-2 font-bold text-amber-600">Custom Workouts</h3>
               <p className="text-black text-lg">
-                Log your mood and energy levels to discover what drives your habits.
+                Create and save your own custom workout plans and splits to fit your schedule and goals.
               </p>
             </div>
           </div>
@@ -179,12 +179,12 @@ export default function Home() {
                 className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFaq('how')}
               >
-                <h3 className="text-xl font-semibold text-gray-900">How does Zuno help me build better habits?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">How does Zuno help me achieve my fitness goals?</h3>
                 <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['how'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['how'] && (
                 <p className="text-black text-base">
-                  Zuno combines AI insights with proven techniques to help you track and maintain habits through personalized suggestions and progress tracking.
+                  Zuno combines smart workout tracking with personalized recommendations to help you stay consistent and reach your fitness goals. Track your exercises, monitor progress, and get smart suggestions based on your performance.
                 </p>
               )}
             </div>
@@ -239,12 +239,12 @@ export default function Home() {
                 className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFaq('free')}
               >
-                <h3 className="text-xl font-semibold text-gray-900">Will Zuno always be free?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Is Zuno free to use?</h3>
                 <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['free'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['free'] && (
                 <p className="text-black text-base">
-                  Yes, core features will always be free. Premium features will be introduced in future updates and will be optional.
+                  Yes! Core workout tracking features are completely free. Premium features like advanced analytics, custom workout templates, and integration with fitness devices will be available in future updates.
                 </p>
               )}
             </div>
