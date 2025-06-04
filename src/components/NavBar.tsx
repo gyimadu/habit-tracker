@@ -44,13 +44,13 @@ export default function NavBar() {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-2xl focus:outline-none"
+            className="md:hidden w-8 h-8 flex flex-col justify-center items-center gap-1.5 focus:outline-none"
             onClick={toggleMenu}
             aria-label="Toggle menu"
           >
-            <span className={`block transition-transform duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1' : ''}`}>-</span>
-            <span className={`block transition-opacity duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}>-</span>
-            <span className={`block transition-transform duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1' : ''}`}>-</span>
+            <span className={`w-6 h-0.5 bg-black transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+            <span className={`w-6 h-0.5 bg-black transition-all duration-300 ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+            <span className={`w-6 h-0.5 bg-black transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
           </button>
         </div>
       </div>
