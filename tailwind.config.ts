@@ -13,7 +13,7 @@ export default {
         foreground: "var(--foreground)",
       },
       fontFamily: {
-        lexend: ["var(--font-lexend)", "sans-serif"]
+        poppins: ["var(--font-poppins)", "sans-serif"]
       }
     },
   },

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Lexend } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react"
 
-const lexend = Lexend({
+const poppins = Poppins({
     subsets: ["latin"],
-    variable: "--font-lexend",
-    weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+    variable: "--font-poppins",
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
     display: "swap",
     preload: true,
     fallback: ["system-ui", "sans-serif"],
@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={lexend.variable}>
+    <html lang="en" className={poppins.variable}>
       <head>
         <link
           rel="preconnect"
@@ -36,9 +36,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body
-        className={`${lexend.variable} antialiased`}
-      >
+      <body className="antialiased">
         {children}
         <Analytics />
       </body>
