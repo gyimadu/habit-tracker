@@ -142,28 +142,28 @@ export default function Home() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div className="space-y-1 py-4 px-3">
+            <div className="space-y-1 py-4 px-2">
               <h3 className="text-xl mb-2 font-bold text-blue-700">Smart Habit Suggestions</h3>
               <p className="text-black text-lg">
                 Get personalized habit ideas based on your goals and behavior patterns.
               </p>
             </div>
 
-            <div className="space-y-1 py-4 px-3">
+            <div className="space-y-1 py-4 px-2">
               <h3 className="text-xl mb-2 font-bold text-purple-700">AI-Powered Reminders</h3>
               <p className="text-black text-lg">
                 Receive intelligent nudges at the right time to keep you on track.
               </p>
             </div>
 
-            <div className="space-y-1 py-4 px-3">
+            <div className="space-y-1 py-4 px-2">
               <h3 className="text-xl mb-2 font-bold text-black">Streak Tracking</h3>
               <p className="text-black text-lg">
                 Track your consistency with visual streaks and stay motivated with rewards.
               </p>
             </div>
 
-            <div className="space-y-1 py-4 px-3">
+            <div className="space-y-1 py-4 px-2">
               <h3 className="text-xl mb-2 font-bold text-amber-600">Mood Logging</h3>
               <p className="text-black text-lg">
                 Log your mood and energy levels to discover what drives your habits.
@@ -249,22 +249,7 @@ export default function Home() {
               </div>
               {expandedFaqs['free'] && (
                 <p className="text-black text-base">
-                  Yes, core features will always be free. Premium features will be optional.
-                </p>
-              )}
-            </div>
-
-            <div className="space-y-2">
-              <div 
-                className="flex justify-between items-start cursor-pointer"
-                onClick={() => toggleFaq('plans')}
-              >
-                <h3 className="text-xl font-semibold text-gray-900">What&apos;s included in free vs. premium?</h3>
-                <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['plans'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
-              </div>
-              {expandedFaqs['plans'] && (
-                <p className="text-black text-base">
-                  Free: unlimited tracking and basic features. Premium: advanced analytics, templates, and integrations.
+                  Yes, core features will always be free. Premium features will be introduced in future updates and will be optional.
                 </p>
               )}
             </div>
