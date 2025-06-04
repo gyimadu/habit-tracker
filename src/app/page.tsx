@@ -139,17 +139,10 @@ export default function Home() {
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            <div className="space-y-1 py-1">
-              <h3 className="text-xl mb-2 font-bold text-blue-700">Personalized Suggestions</h3>
+            <div className="space-y-1 flex flex-col md:flex-row items-center justify-center py-1">
+              <h3 className="text-xl mb-2 text-left md:text-center font-bold text-blue-700">Personalized Suggestions</h3>
               <p className="text-black text-lg">
                 Get personalized workout plans based on your goals and time commitment.
-              </p>
-            </div>
-
-            <div className="space-y-1 flex flex-col md:flex-row items-center justify-center py-1">
-              <h3 className="text-xl mb-2 font-bold text-purple-700">Workout Logging</h3>
-              <p className="text-black text-lg">
-                Quickly log sets, reps, and weight to track your progress.
               </p>
               <DotLottieReact
                 src="https://lottie.host/3cd51b39-9186-42a0-a1bf-9941c7c2f746/nBUVpFdtFy.lottie"
@@ -160,18 +153,46 @@ export default function Home() {
               />
             </div>
 
-            <div className="space-y-1 py-1">
-              <h3 className="text-xl mb-2 font-bold text-black">Streak Tracking</h3>
+            <div className="space-y-1 flex flex-col md:flex-row items-center justify-center py-1">
+              <h3 className="text-xl mb-2 text-left md:text-center font-bold text-purple-700">Workout Logging</h3>
+              <p className="text-black text-lg">
+                Quickly log sets, reps, and weight to track your progress.
+              </p>
+              <DotLottieReact
+                src="https://lottie.host/7167d69b-bb1e-4fee-98d7-1c43b3ba7778/NTwxFynZek.lottie"
+                speed={1}
+                style={{ width: '200px', height: '200px' }}
+                loop
+                autoplay
+              />
+            </div>
+
+            <div className="space-y-1 flex flex-col md:flex-row items-center justify-center py-1">
+              <h3 className="text-xl mb-2 text-left md:text-center font-bold text-black">Streak Tracking</h3>
               <p className="text-black text-lg">
                 Track your consistency with visual streaks and in-app rewards.
               </p>
+              <DotLottieReact
+                src="https://lottie.host/486ef9f4-54c6-4648-99d2-55092ef79db6/e6NnVlZsSk.lottie"
+                speed={1}
+                style={{ width: '200px', height: '200px' }}
+                loop
+                autoplay
+              />
             </div>
 
-            <div className="space-y-1 py-1">
-              <h3 className="text-xl mb-2 font-bold text-amber-600">Custom Workouts</h3>
+            <div className="space-y-1 flex flex-col md:flex-row items-center justify-center py-1">
+              <h3 className="text-xl mb-2 text-left md:text-center font-bold text-amber-600">Custom Workouts</h3>
               <p className="text-black text-lg">
                 Create and save your own custom workout plans and splits to fit your schedule and goals.
               </p>
+              <DotLottieReact
+                src="https://lottie.host/3cd51b39-9186-42a0-a1bf-9941c7c2f746/nBUVpFdtFy.lottie"
+                speed={1}
+                style={{ width: '200px', height: '200px' }}
+                loop
+                autoplay
+              />
             </div>
           </div>
         </div>
