@@ -57,8 +57,8 @@ export default function NavBar() {
 
       {/* Mobile Menu */}
       <div 
-        className={`md:hidden fixed top-16 left-0 right-0 bg-white shadow-lg transition-transform duration-300 ease-in-out ${
-          isMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        className={`md:hidden fixed top-[4.5rem] left-0 right-0 bg-white shadow-lg transition-all duration-300 ease-in-out transform ${
+          isMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0 pointer-events-none'
         }`}
       >
         <div className="container mx-auto px-4 py-4">
