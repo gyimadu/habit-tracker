@@ -76,8 +76,8 @@ export default function NavBar() {
           isMenuOpen ? 'translate-y-0 opacity-95' : '-translate-y-4 opacity-0 pointer-events-none'
         }`}
       >
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex flex-col space-y-4">
+        <div className="container mx-auto px-4 py-6">
+          <div className="flex flex-col space-y-5">
             <button 
               onClick={() => handleScrollToSection('features')}
               className={`text-lg hover:text-blue-600 transition-colors text-left ${pathname === '/' ? 'text-blue-600' : 'text-gray-600'}`}
