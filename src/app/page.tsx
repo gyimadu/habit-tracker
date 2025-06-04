@@ -73,7 +73,19 @@ export default function Home() {
       <main className="container mx-auto p-5 max-w-6xl">
           
         <div className="flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-5rem)] mt-20 text-center">
-          <div className="text-center md:text-left w-full md:w-6/12 mb-10">
+          <div className="md:flex w-full md:w-6/12 md:justify-end order-2 md:order-1 mb-10 md:mb-0">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto"
+            >
+              <source src="/animation.webm" type="video/webm" />
+            </video>
+          </div>
+
+          <div className="text-center md:text-left w-full md:w-6/12 mb-10 order-1 md:order-2">
             <h1 className="text-5xl md:text-5xl font-semibold mb-6 md:leading-normal px-4 md:px-0">Track<br/> better with Zuno</h1>
             <p className="text-lg md:text-lg mb-4">Track. Achieve. Repeat</p>
             
@@ -108,15 +120,6 @@ export default function Home() {
                 </button>
               </div>
             )}
-          </div>
-
-          <div className="md:flex w-full md:w-6/12 md:justify-end">
-            <Image
-              src="/healthy-habit.png"
-              alt="habits"
-              width={600}
-              height={100}
-            />
           </div>
         </div>
 
