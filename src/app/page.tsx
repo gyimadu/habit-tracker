@@ -71,20 +71,23 @@ export default function Home() {
 
       <main className="container mx-auto p-5 max-w-6xl">
           
-        <div className="flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-5rem)] mt-20 text-center">
-          <div className="md:flex w-full md:w-6/12 md:justify-end order-2 md:order-1 mb-10 md:mb-0">
+        <div className="flex flex-col md:flex-row items-center justify-center min-h-[calc(100vh-5rem)] mt-15 text-center">
+          <div className="md:flex w-full md:w-6/12 md:justify-end order-1 md:order-2 mb-10 md:mb-0">
             <video
               autoPlay
               loop
               muted
               playsInline
+              controls={false}
               className="w-full h-auto"
+              style={{ maxWidth: '100%' }}
             >
-              <source src="/animation.webm" type="video/webm" />
+              <source src="/new.mov" type="video/quicktime" />
+              Your browser does not support the video tag.
             </video>
           </div>
 
-          <div className="text-center md:text-left w-full md:w-6/12 mb-10 order-1 md:order-2">
+          <div className="text-center md:text-left w-full md:w-6/12 mb-10 order-2 md:order-1">
             <h1 className="text-5xl md:text-5xl font-semibold mb-6 md:leading-normal px-4 md:px-0">Track<br/> better with Zuno</h1>
             <p className="text-lg md:text-lg mb-4">Track. Achieve. Repeat</p>
             
