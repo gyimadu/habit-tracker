@@ -63,7 +63,7 @@ export default function NavBar() {
                 <span className="text-gray-600 text-sm mr-2">{session.user?.email}</span>
                 <button
                   onClick={() => signOut()}
-                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                  className="px-4 py-2 bg-black  text-white rounded hover:bg-gray-800 transition-colors"
                 >
                   Sign out
                 </button>
@@ -71,7 +71,7 @@ export default function NavBar() {
             ) : (
               <Link
                 href="/auth/signup"
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition-colors"
               >
                 Sign up
               </Link>
