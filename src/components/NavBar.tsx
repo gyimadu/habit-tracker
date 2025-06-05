@@ -75,8 +75,8 @@ export default function NavBar() {
         className={`md:hidden fixed top-[4rem] left-0 right-0 bg-white shadow-lg transition-all duration-300 ease-in-out transform ${
           isMenuOpen ? 'translate-y-0 opacity-95' : '-translate-y-4 opacity-0 pointer-events-none'
         }`}
-      >
-        <div className="container mx-auto px-4 py-6">
+      > 
+        <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col space-y-5">
             <button 
               onClick={() => handleScrollToSection('features')}
