@@ -60,10 +60,15 @@ export default function NavBar() {
             {/* Auth Buttons */}
             {session ? (
               <>
-                <span className="text-gray-600 text-sm mr-2">{session.user?.email}</span>
+                <Link
+                  href="/profile"
+                  className="text-gray-600 mr-2 hover:text-blue-600 transition-colors"
+                >
+                  Profile
+                </Link>
                 <button
                   onClick={() => signOut()}
-                  className="px-4 py-2 bg-black  text-white rounded hover:bg-gray-800 transition-colors"
+                  className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition-colors"
                 >
                   Sign out
                 </button>
@@ -121,10 +126,15 @@ export default function NavBar() {
             {/* Auth Buttons */}
             {session ? (
               <>
-                <span className="text-gray-600 text-sm mb-2">{session.user?.email}</span>
+                <Link
+                  href="/profile"
+                  className="text-gray-600 mr-2 hover:text-blue-600 transition-colors"
+                >
+                  Profile
+                </Link>
                 <button
-                  onClick={() => { signOut(); setIsMenuOpen(false); }}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors text-left"
+                  onClick={() => signOut()}
+                  className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition-colors"
                 >
                   Sign out
                 </button>
@@ -132,7 +142,7 @@ export default function NavBar() {
             ) : (
               <Link
                 href="/auth/signup"
-                className="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors text-left"
+                className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sign up

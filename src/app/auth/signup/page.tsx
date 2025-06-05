@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function SignUp() {
+const SignUp = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -23,8 +23,6 @@ export default function SignUp() {
       return;
     }
 
-    // Here you would typically make an API call to create the user
-    // For now, we'll just sign them in
     const result = await signIn("credentials", {
       email,
       password,
@@ -33,10 +31,10 @@ export default function SignUp() {
       redirect: false,
     });
 
-    if (result?.ok) {
-      router.push("/");
+    if (result?.error) {
+      setError("Invalid email or password");
     } else {
-      setError("Failed to create account");
+      router.push("/profile");
     }
   };
 
@@ -48,19 +46,17 @@ export default function SignUp() {
             Join Zuno!
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Or{' '}
-            <Link href="/auth/signin" className="font-normal text-blue-600 hover:text-blue-500">
-              Sign in to your account
+            Already have an account?{' '}
+            <Link href="/auth/signin" className="font-medium text-blue-600 hover:text-blue-500">
+              Sign in
             </Link>
           </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           {error && (
-            <div className="rounded-md bg-red-50 p-4">
-              <div className="text-sm text-red-700">{error}</div>
-            </div>
+            <div className="text-red-500 text-sm text-center">{error}</div>
           )}
-          <div className="rounded-md shadow-sm -space-y-1px">
+          <div className="rounded-md shadow-sm -space-y-px">
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label htmlFor="first-name" className="sr-only">
@@ -148,7 +144,7 @@ export default function SignUp() {
           <div>
             <button
               type="submit"
-              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-base md:text-lg font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
             >
               Sign up
             </button>
@@ -167,8 +163,8 @@ export default function SignUp() {
 
           <div className="mt-6">
             <button
-              onClick={() => signIn("google")}
-              className="w-full flex items-center justify-center px-4 py-3 border border-gray-300 rounded-md shadow-sm text-base md:text-lg font-medium text-gray-700 bg-white hover:bg-gray-50"
+              onClick={() => signIn("google", { callbackUrl: "/profile" })}
+              className="w-full flex items-center justify-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
             >
               <svg className="h-5 w-5 mr-2" viewBox="0 0 24 24">
                 <path
@@ -195,4 +191,6 @@ export default function SignUp() {
       </div>
     </div>
   );
-} 
+};
+
+export default SignUp; 

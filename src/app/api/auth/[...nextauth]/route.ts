@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { NextRequest, NextResponse } from "next/server";
 
 const handler = NextAuth({
   providers: [
@@ -32,6 +33,16 @@ const handler = NextAuth({
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: '/auth/signin', // Custom sign-in page
+    newUser: '/profile', // Redirect new users to profile page
+  },
+  callbacks: {
+    async redirect({ url, baseUrl }) {
+      // After sign in, redirect to profile page if it's a new user
+      if (url.startsWith(baseUrl)) {
+        return `${baseUrl}/profile`;
+      }
+      return url;
+    },
   },
   session: {
     strategy: "jwt",
