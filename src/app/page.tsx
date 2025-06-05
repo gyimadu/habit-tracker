@@ -214,7 +214,7 @@ export default function Home() {
               </div>
               {expandedFaqs['how'] && (
                 <p className="text-black text-base">
-                  Zuno combines smart workout tracking with personalized recommendations to help you stay consistent and reach your fitness goals. Track your exercises, monitor progress, and get smart suggestions based on your performance.
+                  Zuno combines smart workout tracking with personalized recommendations to help you stay consistent, monitor your progress, and reach your fitness goals.
                 </p>
               )}
             </div>
