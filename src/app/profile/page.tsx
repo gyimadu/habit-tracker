@@ -71,7 +71,7 @@ const Profile = () => {
   }
 
   const profileContent = !isSetup ? (
-    <div className="min-h-screen py-32 px-8 md:px-8">
+    <div className="min-h-screen p-4 md:px-8">
       <div className="max-w-2xl mx-auto">
         <h1 className="text-2xl md:text-3xl font-bold text-left mb-10">Let&apos;s Get You Started</h1>
         <form onSubmit={handleSubmit} className="space-y-6">
