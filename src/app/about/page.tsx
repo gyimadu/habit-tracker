@@ -31,10 +31,10 @@ const About = () => {
             </p>
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-12 text-left">
             <a
               href="/auth/signup"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800"
             >
               Get Started Now
             </a>

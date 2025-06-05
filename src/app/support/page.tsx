@@ -39,7 +39,7 @@ const Support = () => {
           )}
 
           {showForm && !submitted && (
-            <form onSubmit={handleSubmit} className="space-y-6 bg-white py-6 rounded-lg shadow-sm">
+            <form onSubmit={handleSubmit} className="space-y-6 bg-white py-4 rounded-lg shadow-sm">
               <div>
                 <label htmlFor="email" className="block text-base font-medium text-gray-700 mb-1">
                   Email
