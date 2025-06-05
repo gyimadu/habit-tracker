@@ -132,7 +132,7 @@ export default function NavBar() {
             ) : (
               <Link
                 href="/auth/signup"
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-left"
+                className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition-colors text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sign up
