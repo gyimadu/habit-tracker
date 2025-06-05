@@ -68,7 +68,7 @@ export default function NavBar() {
                 </Link>
                 <button
                   onClick={() => signOut()}
-                  className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition-colors"
+                  className="px-4 py-2 bg-black text-white rounded-2xl hover:bg-gray-800 transition-colors"
                 >
                   Sign out
                 </button>
@@ -76,7 +76,7 @@ export default function NavBar() {
             ) : (
               <Link
                 href="/auth/signup"
-                className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition-colors"
+                className="px-4 py-2 bg-black text-white rounded-2xl hover:bg-gray-800 transition-colors"
               >
                 Sign up
               </Link>
@@ -128,13 +128,13 @@ export default function NavBar() {
               <>
                 <Link
                   href="/profile"
-                  className="text-gray-600 mr-2 hover:text-blue-600 transition-colors"
+                  className="text-gray-600 text-lg mr-2 hover:text-blue-600 transition-colors"
                 >
                   Profile
                 </Link>
                 <button
                   onClick={() => signOut()}
-                  className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition-colors"
+                  className="px-4 py-2 bg-black text-white rounded-2xl hover:bg-gray-800 transition-colors"
                 >
                   Sign out
                 </button>

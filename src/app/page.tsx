@@ -86,7 +86,7 @@ export default function Home() {
             {!isAddingHabit ? (
               <button 
                 onClick={() => setIsAddingHabit(true)}
-                className="bg-black border-black text-white px-4 py-2.5 rounded-full hover:bg-blue-800 transition"
+                className="bg-black border-black text-white px-4 py-2.5 rounded-2xl hover:bg-blue-800 transition"
               >
                 + Get Started
               </button>

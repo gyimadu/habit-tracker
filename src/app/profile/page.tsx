@@ -64,7 +64,7 @@ const Profile = () => {
         <NavBar />
         <div className="min-h-screen py-32 px-8 md:px-8">
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-3xl font-bold text-left mb-10">Let&apos;s Get You Started</h1>
+            <h1 className="text-2xl md:text-3xl font-bold text-left mb-10">Let&apos;s Get You Started</h1>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-base font-medium text-gray-700">Username</label>
@@ -187,7 +187,7 @@ const Profile = () => {
 
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-2xl shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
                 Save Profile
               </button>
