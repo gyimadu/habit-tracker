@@ -3,10 +3,12 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useSession, signIn, signOut } from "next-auth/react";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { data: session } = useSession();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -36,7 +38,7 @@ export default function NavBar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex space-x-8 items-center">
             <button 
               onClick={() => handleScrollToSection('features')}
               className={`hover:text-blue-600 transition-colors ${pathname === '/' ? 'text-blue-600' : 'text-gray-600'}`}
@@ -55,6 +57,25 @@ export default function NavBar() {
             >
               About
             </Link>
+            {/* Auth Buttons */}
+            {session ? (
+              <>
+                <span className="text-gray-600 text-sm mr-2">{session.user?.email}</span>
+                <button
+                  onClick={() => signOut()}
+                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+                >
+                  Sign out
+                </button>
+              </>
+            ) : (
+              <Link
+                href="/auth/signup"
+                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors"
+              >
+                Sign up
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -75,7 +96,7 @@ export default function NavBar() {
         className={`md:hidden fixed top-[4rem] left-0 right-0 bg-white shadow-lg transition-all duration-300 ease-in-out transform ${
           isMenuOpen ? 'translate-y-0 opacity-95' : '-translate-y-4 opacity-0 pointer-events-none'
         }`}
-      > 
+      >
         <div className="container mx-auto px-6 py-6">
           <div className="flex flex-col space-y-5">
             <button 
@@ -97,6 +118,26 @@ export default function NavBar() {
             >
               About
             </Link>
+            {/* Auth Buttons */}
+            {session ? (
+              <>
+                <span className="text-gray-600 text-sm mb-2">{session.user?.email}</span>
+                <button
+                  onClick={() => { signOut(); setIsMenuOpen(false); }}
+                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-left"
+                >
+                  Sign out
+                </button>
+              </>
+            ) : (
+              <Link
+                href="/auth/signup"
+                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-left"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Sign up
+              </Link>
+            )}
           </div>
         </div>
       </div>
