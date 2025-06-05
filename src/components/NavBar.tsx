@@ -33,7 +33,7 @@ export default function NavBar() {
     <nav className="fixed w-full top-0 left-0 right-0 bg-white z-50">
       <div className="container mx-auto px-6 py-6">
         <div className="flex justify-between items-center">
-          <Link href="/" className="text-3xl md:text-3xl font-bold text-gray-800">
+          <Link href="/" className="text-2xl md:text-3xl font-bold text-gray-800">
             Grit
           </Link>
 

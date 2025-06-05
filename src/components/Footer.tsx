@@ -1,30 +1,33 @@
-import React from 'react';
+'use client';
+
 import Link from 'next/link';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
-    <footer className="container mx-auto max-w-7xl px-4 py-16">
-        <div className="grid grid-cols-1 mx-auto w-full md:grid-cols-3 gap-8 border-t-2 pt-10">
-            <div className="space-y-4">
-                <h3 className="text-sm font-semibold text-gray-800">Grit</h3>
-                <p className="text-sm text-gray-600">© 2024 Grit-io</p>
-                <Link href="/privacy" className="text-sm text-gray-600 hover:text-gray-900">
-                  Privacy Policy
-                </Link>
+    <footer className="border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="flex items-center space-x-4 mb-4 md:mb-0">
+            <Link href="/" className="text-lg md:text-2xl font-bold text-blue-600">
+              Grit
+            </Link>
+            <div className="text-gray-500 text-sm">
+              © {new Date().getFullYear()} Grit. All rights reserved.
             </div>
-            
-            <div className="grid grid-cols-2 gap-8">  
-                <div>
-                    <h4 className="text-sm font-semibold text-gray-700 mb-4">Company</h4>
-                    <ul className="space-y-2 text-sm text-gray-600">
-                    <li className="hover:text-gray-800 transition-colors cursor-pointer">About us</li>
-                    <li className="hover:text-gray-800 transition-colors cursor-pointer">How to Use</li>
-                    <li className="hover:text-gray-800 transition-colors cursor-pointer">Log in / Sign up</li>
-                    <li className="hover:text-gray-800 transition-colors cursor-pointer">Contact Us</li>
-                    </ul>
-                </div>
-            </div>
+          </div>
+          <div className="flex space-x-6">
+            <Link href="/about" className="text-gray-500 hover:text-gray-700 text-sm">
+              About
+            </Link>
+            <Link href="/support" className="text-gray-500 hover:text-gray-700 text-sm">
+              Support
+            </Link>
+            <Link href="/privacy" className="text-gray-500 hover:text-gray-700 text-sm">
+              Privacy
+            </Link>
+          </div>
         </div>
+      </div>
     </footer>
   );
 };
