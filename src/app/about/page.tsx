@@ -8,7 +8,7 @@ const About = () => {
   return (
     <div>
       <NavBar />
-      <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen py-32 px-8 md:px-8">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900 mb-4">About Zuno</h1>
@@ -19,15 +19,15 @@ const About = () => {
 
           <div className="space-y-8 text-gray-600">
             <p className="text-lg leading-relaxed">
-              At Zuno, we believe that everyone deserves to achieve their fitness goals. Our mission is to make workout tracking simple, intuitive, and motivating. Whether you&apos;re a beginner or a seasoned athlete, Zuno helps you stay consistent and track your progress towards a healthier lifestyle.
+              Zuno is your dedicated fitness companion, designed to make workout tracking simple and motivating. Whether you&apos;re just starting out or you&apos;re a seasoned athlete, we help you stay consistent and achieve your fitness goals.
             </p>
 
             <p className="text-lg leading-relaxed">
-              With Zuno, you can easily log your workouts, set goals, and watch your progress over time. Our intuitive tracking system helps you build lasting habits, set reminders, and celebrate your achievements along the way. From customizable workout routines to detailed progress analytics, we provide all the tools you need to succeed.
+              Track your workouts, set goals, and watch your progress with our intuitive system. From customizable routines to detailed analytics, we provide everything you need to build lasting fitness habits.
             </p>
 
             <p className="text-lg leading-relaxed">
-              Join thousands of users who are already achieving their fitness goals with Zuno. Our platform offers secure data storage, cross-device synchronization, and regular updates to ensure you have the best possible experience on your fitness journey.
+              Join our community of fitness enthusiasts and experience secure, seamless tracking across all your devices. Start your journey to a healthier lifestyle today.
             </p>
           </div>
 
