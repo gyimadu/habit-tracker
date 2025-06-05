@@ -42,9 +42,7 @@ const SignUp = () => {
     <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
-          <h2 className="mt-6 text-center text-2xl md:text-3xl font-bold text-gray-900">
-            Join Zuno!
-          </h2>
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Join Grit!</h1>
           <p className="mt-2 text-center text-sm text-gray-600">
             Already have an account?{' '}
             <Link href="/auth/signin" className="font-medium text-blue-600 hover:text-blue-500">

@@ -1,12 +1,16 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
     <footer className="container mx-auto max-w-7xl px-4 py-16">
         <div className="grid grid-cols-1 mx-auto w-full md:grid-cols-3 gap-8 border-t-2 pt-10">
             <div className="space-y-4">
-                <h3 className="text-sm font-semibold text-gray-800">Zuno</h3>
-                <p className="text-sm text-gray-600">© 2024 Zuno-io</p>
+                <h3 className="text-sm font-semibold text-gray-800">Grit</h3>
+                <p className="text-sm text-gray-600">© 2024 Grit-io</p>
+                <Link href="/privacy" className="text-sm text-gray-600 hover:text-gray-900">
+                  Privacy Policy
+                </Link>
             </div>
             
             <div className="grid grid-cols-2 gap-8">  

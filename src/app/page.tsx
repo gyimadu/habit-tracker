@@ -209,12 +209,12 @@ export default function Home() {
                 className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFaq('how')}
               >
-                <h3 className="text-xl font-semibold text-gray-900">How does Zuno help me achieve my fitness goals?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">How does Grit help me achieve my fitness goals?</h3>
                 <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['how'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['how'] && (
-                <p className="text-black text-base">
-                  Zuno combines smart workout tracking with personalized recommendations to help you stay consistent, monitor your progress, and reach your fitness goals.
+                <p className="text-gray-600">
+                  Grit combines smart workout tracking with personalized recommendations to help you stay consistent, monitor your progress, and reach your fitness goals.
                 </p>
               )}
             </div>
@@ -239,7 +239,7 @@ export default function Home() {
                 className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFaq('privacy')}
               >
-                <h3 className="text-xl font-semibold text-gray-900">Does Zuno share my data with third parties?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Does Grit share my data with third parties?</h3>
                 <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['privacy'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['privacy'] && (
@@ -254,7 +254,7 @@ export default function Home() {
                 className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFaq('mobile')}
               >
-                <h3 className="text-xl font-semibold text-gray-900">Is Zuno available on mobile devices?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Is Grit available on mobile devices?</h3>
                 <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['mobile'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['mobile'] && (
@@ -269,7 +269,7 @@ export default function Home() {
                 className="flex justify-between items-start cursor-pointer"
                 onClick={() => toggleFaq('free')}
               >
-                <h3 className="text-xl font-semibold text-gray-900">Is Zuno free to use?</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Is Grit free to use?</h3>
                 <span className={`text-2xl font-normal transition-transform duration-300 ${expandedFaqs['free'] ? 'rotate-45' : 'rotate-0'}`}>+</span>
               </div>
               {expandedFaqs['free'] && (
@@ -289,7 +289,7 @@ export default function Home() {
               </div>
               {expandedFaqs['support'] && (
                 <p className="text-black text-base">
-                  Contact us at support@zuno.app or use the in-app feedback form. We respond within 24 hours.
+                  Contact us at support@grit.app or use the in-app feedback form. We respond within 24 hours.
                 </p>
               )}
             </div>
@@ -304,7 +304,7 @@ export default function Home() {
               </div>
               {expandedFaqs['feedback'] && (
                 <p className="text-black text-base">
-                  Yes! Use the feedback form or email feedback@zuno.app. We review all submissions.
+                  Yes! Use the feedback form or email feedback@grit.app. We review all submissions.
                 </p>
               )}
             </div>

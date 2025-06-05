@@ -10,8 +10,8 @@ const About = () => {
       <NavBar />
       <div className="min-h-screen py-32 px-8 md:px-8">
         <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold text-gray-900 mb-4">About Zuno</h1>
+          <div className="text-left mb-12">
+            <h1 className="text-4xl font-bold text-gray-900 mb-4">About Grit</h1>
             <p className="text-xl text-gray-600">
               Your personal fitness companion
             </p>
@@ -19,7 +19,7 @@ const About = () => {
 
           <div className="space-y-8 text-gray-600">
             <p className="text-lg leading-relaxed">
-              Zuno is your dedicated fitness companion, designed to make workout tracking simple and motivating. Whether you&apos;re just starting out or you&apos;re a seasoned athlete, we help you stay consistent and achieve your fitness goals.
+              Grit is your dedicated fitness companion, designed to make workout tracking simple and motivating. Whether you&apos;re just starting out or you&apos;re a seasoned athlete, we help you stay consistent and achieve your fitness goals.
             </p>
 
             <p className="text-lg leading-relaxed">
