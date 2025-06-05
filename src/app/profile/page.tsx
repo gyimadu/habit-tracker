@@ -64,7 +64,7 @@ const Profile = () => {
         <NavBar />
         <div className="min-h-screen py-32 px-8 md:px-8">
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-3xl font-bold text-left mb-10">Let's Get You Started</h1>
+            <h1 className="text-3xl font-bold text-left mb-10">Let&apos;s Get You Started</h1>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label className="block text-base font-medium text-gray-700">Username</label>
@@ -231,7 +231,7 @@ const Profile = () => {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500">Height</p>
-                  <p className="font-medium">{profileData.height.feet}'{profileData.height.inches}"</p>
+                  <p className="font-medium">{profileData.height.feet}&apos;{profileData.height.inches}&apos;&apos;</p>
                 </div>
               </div>
             </div>
