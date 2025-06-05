@@ -51,16 +51,18 @@ const SignUp = () => {
 
       // Redirect to mobile home page
       router.push('/mobile/home');
-    } catch (error) {
-      setError(error instanceof Error ? error.message : 'An error occurred');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred');
+      console.error('Registration error:', err);
     }
   };
 
   const handleGoogleSignIn = async () => {
     try {
       await signIn('google', { callbackUrl: '/mobile/home' });
-    } catch (error) {
+    } catch (err) {
       setError('An error occurred with Google sign in.');
+      console.error('Google sign in error:', err);
     }
   };
 

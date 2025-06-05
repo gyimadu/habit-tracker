@@ -31,16 +31,18 @@ const SignIn = () => {
 
       // Redirect to mobile home page
       router.push('/mobile/home');
-    } catch (error) {
+    } catch (err) {
       setError('An error occurred. Please try again.');
+      console.error('Sign in error:', err);
     }
   };
 
   const handleGoogleSignIn = async () => {
     try {
       await signIn('google', { callbackUrl: '/mobile/home' });
-    } catch (error) {
+    } catch (err) {
       setError('An error occurred with Google sign in.');
+      console.error('Google sign in error:', err);
     }
   };
 
