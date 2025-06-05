@@ -124,7 +124,7 @@ export default function NavBar() {
                 <span className="text-gray-600 text-sm mb-2">{session.user?.email}</span>
                 <button
                   onClick={() => { signOut(); setIsMenuOpen(false); }}
-                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition-colors text-left"
+                  className="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors text-left"
                 >
                   Sign out
                 </button>
@@ -132,7 +132,7 @@ export default function NavBar() {
             ) : (
               <Link
                 href="/auth/signup"
-                className="px-4 py-2 bg-black text-white rounded hover:bg-gray-800 transition-colors text-left"
+                className="px-4 py-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors text-left"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sign up
