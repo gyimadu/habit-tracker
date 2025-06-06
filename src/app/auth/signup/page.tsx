@@ -14,15 +14,12 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [username, setUsername] = useState('');
-  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    setLoading(true);
     if (password !== confirmPassword) {
       setError('Passwords do not match');
-      setLoading(false);
       return;
     }
     try {
@@ -58,8 +55,6 @@ const SignUp = () => {
       router.push('/mobile/home');
     } catch (err) {
       setError('Sign up failed. Please try again.');
-    } finally {
-      setLoading(false);
     }
   };
 

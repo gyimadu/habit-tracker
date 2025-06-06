@@ -2,12 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import MobileLayout from '@/components/MobileLayout';
-import Link from 'next/link';
 import { signOut } from 'next-auth/react';
+import Image from 'next/image';
 
-const dummyAvatar = 'https://randomuser.me/api/portraits/men/32.jpg';
-const userName = 'Alex';
-const numDays = 5;
+const numDays = 0;
 
 function getFormattedDate() {
   const now = new Date();
@@ -20,7 +18,6 @@ function getFormattedDate() {
 export default function MobileHome() {
   const [loading, setLoading] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
-  const [showProfileInfo, setShowProfileInfo] = useState(false);
   const [touchStartY, setTouchStartY] = useState(0);
   const [touchCurrentY, setTouchCurrentY] = useState(0);
   const [profile, setProfile] = useState<{ username: string; avatar: string; gender: string; age: number; weight: number; height: { feet: number; inches: number }; goals: string[] }>({ username: '', avatar: '', gender: '', age: 18, weight: 150, height: { feet: 5, inches: 8 }, goals: [] });
@@ -65,14 +62,12 @@ export default function MobileHome() {
   const handleTouchEnd = () => {
     if (touchCurrentY - touchStartY > 80) {
       setShowProfile(false);
-      setShowProfileInfo(false);
       setEditMode(false);
     }
   };
 
   const closeModal = () => {
     setShowProfile(false);
-    setShowProfileInfo(false);
     setEditMode(false);
     setModalView('menu');
   };
@@ -96,7 +91,7 @@ export default function MobileHome() {
   const renderAvatar = (size = 'w-12 h-12') => {
     if (profile.avatar) {
       return (
-        <img
+        <Image
           src={profile.avatar}
           alt="Avatar"
           className={`${size} rounded-full object-cover border-2 border-gray-200`}
@@ -166,7 +161,7 @@ export default function MobileHome() {
         {/* New Rounded Containers */}
         <div className="space-y-5 mt-4">
           {/* Personalized Plan */}
-          <div className="bg-gray-100 rounded-2xl p-5">
+          <div className="border-2 border-gray-100 rounded-3xl p-5">
             <div className="flex items-center justify-between mb-2">
               <h2 className="font-bold text-lg">Get Your Personalized Plan</h2>
               <span className="ml-2">
@@ -180,7 +175,7 @@ export default function MobileHome() {
           </div>
 
           {/* Explore Workouts */}
-          <div className="bg-gray-100 rounded-2xl p-5">
+          <div className="border-2 border-gray-100 rounded-3xl p-5">
             <div className="flex items-center justify-between mb-2">
               <h2 className="font-bold text-lg">Explore Workouts</h2>
               <span className="ml-2">
@@ -218,7 +213,7 @@ export default function MobileHome() {
                     <div className="text-lg font-bold">{profile.username || 'User'}</div>
                   </div>
                   <nav className="space-y-4">
-                    <button className="block w-full text-gray-700 hover:text-blue-600 py-2 text-center text-lg" onClick={() => { setShowProfileInfo(true); setModalView('profile'); }}>
+                    <button className="block w-full text-gray-700 hover:text-blue-600 py-2 text-center text-lg" onClick={() => setModalView('profile')}>
                       Profile
                     </button>
                     <button className="block w-full text-gray-700 hover:text-blue-600 py-2 text-center text-lg" onClick={() => setModalView('about')}>
@@ -235,7 +230,7 @@ export default function MobileHome() {
               )}
               {modalView === 'profile' && !editMode && (
                 <>
-                  <button className="mb-4 flex items-center text-gray-500 hover:text-gray-700" onClick={() => { setShowProfileInfo(false); setModalView('menu'); }}>
+                  <button className="mb-4 flex items-center text-gray-500 hover:text-gray-700" onClick={() => setModalView('menu')}>
                     <svg className="w-5 h-5 mr-1" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                     </svg>
@@ -296,7 +291,7 @@ export default function MobileHome() {
                   <form className="flex flex-col items-center mb-6 space-y-3 w-full" onSubmit={e => { e.preventDefault(); handleEditSave(); }}>
                     {/* Avatar */}
                     {editAvatar ? (
-                      <img src={editAvatar} alt="Avatar" className="w-20 h-20 rounded-full object-cover border-2 border-gray-200 mb-2" />
+                      <Image src={editAvatar} alt="Avatar" className="w-20 h-20 rounded-full object-cover border-2 border-gray-200 mb-2" />
                     ) : (
                       <div className="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center border-2 border-gray-200 text-gray-500 font-bold text-3xl mb-2">
                         {editUsername.charAt(0).toUpperCase()}
