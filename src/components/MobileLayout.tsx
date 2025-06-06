@@ -48,7 +48,7 @@ const MobileLayout = ({ children }: { children: React.ReactNode }) => {
       </main>
 
       {/* Bottom Tabs */}
-      <div className="fixed bottom-4 left-0 right-0 bg-white">
+      <div className="fixed bottom-0 left-0 right-0 bg-white">
         <div className="flex justify-around">
           {tabs.map((tab) => (
             <Link

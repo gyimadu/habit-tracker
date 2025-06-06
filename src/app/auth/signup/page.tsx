@@ -13,16 +13,18 @@ const SignUp = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const [username, setUsername] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-
+    setLoading(true);
     if (password !== confirmPassword) {
       setError('Passwords do not match');
+      setLoading(false);
       return;
     }
-
     try {
       const response = await fetch('/api/auth/register', {
         method: 'POST',
@@ -49,11 +51,15 @@ const SignUp = () => {
         return;
       }
 
+      // Save username and blank avatar to localStorage
+      localStorage.setItem('profileData', JSON.stringify({ username, avatar: '' }));
+
       // Redirect to mobile home page
       router.push('/mobile/home');
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
-      console.error('Registration error:', err);
+      setError('Sign up failed. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -78,6 +84,16 @@ const SignUp = () => {
                 {error}
               </div>
             )}
+            <div>
+              <label className="block text-base font-medium text-gray-700">Username</label>
+              <input
+                type="text"
+                required
+                className="mt-1 block w-full px-2 py-2 rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
             <div>
               <label className="block text-base font-medium text-gray-700">Email</label>
               <input
