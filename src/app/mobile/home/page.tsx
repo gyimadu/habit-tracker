@@ -197,7 +197,7 @@ export default function MobileHome() {
           >
             <div className="absolute inset-0 bg-black bg-opacity-40" />
             <div
-              className="relative w-full max-w-md mx-auto bg-white rounded-t-3xl p-6 pb-4 z-40 animate-slideup h-[75vh] overflow-y-auto flex flex-col"
+              className="relative w-full max-w-md mx-auto bg-white rounded-t-3xl p-6 pb-4 z-40 animate-slideup h-[75vh] overflow-y-auto scrollbar-none flex flex-col"
               style={{ touchAction: 'none' }}
               onClick={e => e.stopPropagation()}
               onTouchStart={handleTouchStart}
@@ -236,45 +236,47 @@ export default function MobileHome() {
                     </svg>
                     Back
                   </button>
-                  <div className="flex flex-col items-center mb-6">
-                    {renderAvatar('w-20 h-20')}
-                    <div className="text-xl font-bold mb-1">{profile.username || 'User'}</div>
-                  </div>
-                  <div className="bg-gray-100 rounded-lg p-4 w-full mb-4">
-                    <div className="grid grid-cols-2 gap-4 mb-2">
-                      <div>
-                        <div className="text-xs text-gray-500">Gender</div>
-                        <div className="font-medium text-sm">{profile.gender || '-'}</div>
+                  <div className="overflow-y-auto scrollbar-none" style={{ scrollbarWidth: 'none' }}>
+                    <div className="flex flex-col items-center mb-6">
+                      {renderAvatar('w-20 h-20')}
+                      <div className="text-xl font-bold mb-1">{profile.username || 'User'}</div>
+                    </div>
+                    <div className="bg-gray-100 rounded-lg p-4 w-full mb-4">
+                      <div className="grid grid-cols-2 gap-4 mb-2">
+                        <div>
+                          <div className="text-xs text-gray-500">Gender</div>
+                          <div className="font-medium text-sm">{profile.gender || '-'}</div>
+                        </div>
+                        <div>
+                          <div className="text-xs text-gray-500">Age</div>
+                          <div className="font-medium text-sm">{profile.age ? `${profile.age} years` : '-'}</div>
+                        </div>
+                        <div>
+                          <div className="text-xs text-gray-500">Weight</div>
+                          <div className="font-medium text-sm">{profile.weight ? `${profile.weight} lbs` : '-'}</div>
+                        </div>
+                        <div>
+                          <div className="text-xs text-gray-500">Height</div>
+                          <div className="font-medium text-sm">{profile.height ? `${profile.height.feet}'${profile.height.inches}''` : '-'}</div>
+                        </div>
                       </div>
                       <div>
-                        <div className="text-xs text-gray-500">Age</div>
-                        <div className="font-medium text-sm">{profile.age ? `${profile.age} years` : '-'}</div>
-                      </div>
-                      <div>
-                        <div className="text-xs text-gray-500">Weight</div>
-                        <div className="font-medium text-sm">{profile.weight ? `${profile.weight} lbs` : '-'}</div>
-                      </div>
-                      <div>
-                        <div className="text-xs text-gray-500">Height</div>
-                        <div className="font-medium text-sm">{profile.height ? `${profile.height.feet}'${profile.height.inches}''` : '-'}</div>
+                        <div className="text-xs text-gray-500 mb-1">Workout Goals</div>
+                        <div className="flex flex-wrap gap-2">
+                          {profile.goals && profile.goals.length > 0 ? (
+                            profile.goals.map((goal: string) => (
+                              <span key={goal} className="px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800">{goal}</span>
+                            ))
+                          ) : (
+                            <span className="text-gray-400 text-xs">No goals set</span>
+                          )}
+                        </div>
                       </div>
                     </div>
-                    <div>
-                      <div className="text-xs text-gray-500 mb-1">Workout Goals</div>
-                      <div className="flex flex-wrap gap-2">
-                        {profile.goals && profile.goals.length > 0 ? (
-                          profile.goals.map((goal: string) => (
-                            <span key={goal} className="px-2 py-1 rounded-full text-xs bg-blue-100 text-blue-800">{goal}</span>
-                          ))
-                        ) : (
-                          <span className="text-gray-400 text-xs">No goals set</span>
-                        )}
-                      </div>
-                    </div>
+                    <button className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold w-full" onClick={() => setEditMode(true)}>
+                      Edit Profile
+                    </button>
                   </div>
-                  <button className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold w-full" onClick={() => setEditMode(true)}>
-                    Edit Profile
-                  </button>
                 </>
               )}
               {modalView === 'profile' && editMode && (
@@ -288,130 +290,132 @@ export default function MobileHome() {
                     </svg>
                     Back
                   </button>
-                  <form className="flex flex-col items-center mb-6 space-y-3 w-full" onSubmit={e => { e.preventDefault(); handleEditSave(); }}>
-                    {/* Avatar */}
-                    {editAvatar ? (
-                      <Image src={editAvatar} alt="Avatar" className="w-20 h-20 rounded-full object-cover border-2 border-gray-200 mb-2" />
-                    ) : (
-                      <div className="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center border-2 border-gray-200 text-gray-500 font-bold text-3xl mb-2">
-                        {editUsername.charAt(0).toUpperCase()}
-                      </div>
-                    )}
-                    <input
-                      type="text"
-                      className="mt-2 mb-2 px-3 py-2 rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500 w-full text-center"
-                      value={editAvatar}
-                      onChange={e => setEditAvatar(e.target.value)}
-                      placeholder="Avatar URL (optional)"
-                    />
-                    {/* Username */}
-                    <input
-                      type="text"
-                      className="mt-2 mb-2 px-3 py-2 rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500 w-full text-center"
-                      value={editUsername}
-                      onChange={e => setEditUsername(e.target.value)}
-                      placeholder="Username"
-                      required
-                    />
-                    {/* Gender */}
-                    <select
-                      required
-                      className="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                      value={editGender}
-                      onChange={e => setEditGender(e.target.value)}
-                    >
-                      <option value="">Select Gender</option>
-                      <option value="Male">Male</option>
-                      <option value="Female">Female</option>
-                      <option value="Other">Other</option>
-                    </select>
-                    {/* Age */}
-                    <input
-                      type="number"
-                      required
-                      min="13"
-                      max="100"
-                      className="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                      value={editAge}
-                      onChange={e => setEditAge(Number(e.target.value))}
-                      placeholder="Age"
-                    />
-                    {/* Weight */}
-                    <div className="w-full">
-                      <label className="block text-sm font-medium text-gray-700">Weight (lbs)</label>
+                  <div className="overflow-y-auto scrollbar-none" style={{ scrollbarWidth: 'none' }}>
+                    <form className="flex flex-col items-center mb-6 space-y-3 w-full" onSubmit={e => { e.preventDefault(); handleEditSave(); }}>
+                      {/* Avatar */}
+                      {editAvatar ? (
+                        <img src={editAvatar} alt="Avatar" className="w-20 h-20 rounded-full object-cover border-2 border-gray-200 mb-2" />
+                      ) : (
+                        <div className="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center border-2 border-gray-200 text-gray-500 font-bold text-3xl mb-2">
+                          {editUsername.charAt(0).toUpperCase()}
+                        </div>
+                      )}
                       <input
-                        type="range"
-                        min="80"
-                        max="400"
-                        step="1"
-                        className="w-full"
-                        value={editWeight}
-                        onChange={e => setEditWeight(Number(e.target.value))}
+                        type="text"
+                        className="mt-2 mb-2 px-3 py-2 rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500 w-full text-center"
+                        value={editAvatar}
+                        onChange={e => setEditAvatar(e.target.value)}
+                        placeholder="Avatar URL (optional)"
                       />
-                      <div className="flex justify-between text-xs text-gray-500">
-                        <span>80 lbs</span>
-                        <span className="font-medium text-gray-900">{editWeight} lbs</span>
-                        <span>400 lbs</span>
+                      {/* Username */}
+                      <input
+                        type="text"
+                        className="mt-2 mb-2 px-3 py-2 rounded-md border border-gray-300 focus:border-blue-500 focus:ring-blue-500 w-full text-center"
+                        value={editUsername}
+                        onChange={e => setEditUsername(e.target.value)}
+                        placeholder="Username"
+                        required
+                      />
+                      {/* Gender */}
+                      <select
+                        required
+                        className="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        value={editGender}
+                        onChange={e => setEditGender(e.target.value)}
+                      >
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                      </select>
+                      {/* Age */}
+                      <input
+                        type="number"
+                        required
+                        min="13"
+                        max="100"
+                        className="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                        value={editAge}
+                        onChange={e => setEditAge(Number(e.target.value))}
+                        placeholder="Age"
+                      />
+                      {/* Weight */}
+                      <div className="w-full">
+                        <label className="block text-sm font-medium text-gray-700">Weight (lbs)</label>
+                        <input
+                          type="range"
+                          min="80"
+                          max="400"
+                          step="1"
+                          className="w-full"
+                          value={editWeight}
+                          onChange={e => setEditWeight(Number(e.target.value))}
+                        />
+                        <div className="flex justify-between text-xs text-gray-500">
+                          <span>80 lbs</span>
+                          <span className="font-medium text-gray-900">{editWeight} lbs</span>
+                          <span>400 lbs</span>
+                        </div>
                       </div>
-                    </div>
-                    {/* Height */}
-                    <div className="w-full grid grid-cols-2 gap-3">
-                      <div>
-                        <label className="block text-xs text-gray-500">Feet</label>
-                        <select
-                          required
-                          className="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                          value={editHeight.feet}
-                          onChange={e => setEditHeight({ ...editHeight, feet: Number(e.target.value) })}
-                        >
-                          {[4, 5, 6, 7, 8].map((feet) => (
-                            <option key={feet} value={feet}>{feet} ft</option>
+                      {/* Height */}
+                      <div className="w-full grid grid-cols-2 gap-3">
+                        <div>
+                          <label className="block text-xs text-gray-500">Feet</label>
+                          <select
+                            required
+                            className="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                            value={editHeight.feet}
+                            onChange={e => setEditHeight({ ...editHeight, feet: Number(e.target.value) })}
+                          >
+                            {[4, 5, 6, 7, 8].map((feet) => (
+                              <option key={feet} value={feet}>{feet} ft</option>
+                            ))}
+                          </select>
+                        </div>
+                        <div>
+                          <label className="block text-xs text-gray-500">Inches</label>
+                          <select
+                            required
+                            className="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                            value={editHeight.inches}
+                            onChange={e => setEditHeight({ ...editHeight, inches: Number(e.target.value) })}
+                          >
+                            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((inches) => (
+                              <option key={inches} value={inches}>{inches} in</option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+                      {/* Goals */}
+                      <div className="w-full">
+                        <label className="block text-sm font-medium text-gray-700">Workout Goals</label>
+                        <div className="mt-2 space-y-2">
+                          {['Build Muscle', 'Lose Weight', 'Improve Fitness', 'Increase Strength', 'Maintain Health'].map((goal) => (
+                            <label key={goal} className="inline-flex items-center mr-4">
+                              <input
+                                type="checkbox"
+                                className="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                                checked={editGoals.includes(goal)}
+                                onChange={e => {
+                                  const newGoals = e.target.checked
+                                    ? [...editGoals, goal]
+                                    : editGoals.filter(g => g !== goal);
+                                  setEditGoals(newGoals);
+                                }}
+                              />
+                              <span className="ml-2 text-sm">{goal}</span>
+                            </label>
                           ))}
-                        </select>
+                        </div>
                       </div>
-                      <div>
-                        <label className="block text-xs text-gray-500">Inches</label>
-                        <select
-                          required
-                          className="mt-1 block w-full px-3 py-2 rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                          value={editHeight.inches}
-                          onChange={e => setEditHeight({ ...editHeight, inches: Number(e.target.value) })}
-                        >
-                          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((inches) => (
-                            <option key={inches} value={inches}>{inches} in</option>
-                          ))}
-                        </select>
-                      </div>
-                    </div>
-                    {/* Goals */}
-                    <div className="w-full">
-                      <label className="block text-sm font-medium text-gray-700">Workout Goals</label>
-                      <div className="mt-2 space-y-2">
-                        {['Build Muscle', 'Lose Weight', 'Improve Fitness', 'Increase Strength', 'Maintain Health'].map((goal) => (
-                          <label key={goal} className="inline-flex items-center mr-4">
-                            <input
-                              type="checkbox"
-                              className="rounded border-gray-300 text-blue-600 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                              checked={editGoals.includes(goal)}
-                              onChange={e => {
-                                const newGoals = e.target.checked
-                                  ? [...editGoals, goal]
-                                  : editGoals.filter(g => g !== goal);
-                                setEditGoals(newGoals);
-                              }}
-                            />
-                            <span className="ml-2 text-sm">{goal}</span>
-                          </label>
-                        ))}
-                      </div>
-                    </div>
-                    <button
-                      type="submit"
-                      className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold w-full"
-                    >
-                      Save
-                    </button>
-                  </form>
+                      <button
+                        type="submit"
+                        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg font-semibold w-full"
+                      >
+                        Save
+                      </button>
+                    </form>
+                  </div>
                 </>
               )}
               {modalView === 'about' && (
