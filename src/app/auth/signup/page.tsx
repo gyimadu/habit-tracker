@@ -54,6 +54,7 @@ const SignUp = () => {
       // Redirect to mobile home page
       router.push('/mobile/home');
     } catch (err) {
+      console.error(err);
       setError('Sign up failed. Please try again.');
     }
   };
